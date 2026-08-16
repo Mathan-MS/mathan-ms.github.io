@@ -1,396 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mathan Kumar Kodirajan's data science and generative AI portfolio.">
+  <title>Mathan Kumar Kodirajan | Data Science Portfolio</title>
+  <style>
+    :root {
+      --navy: #102a43;
+      --blue: #1677ff;
+      --blue-dark: #0b5ed7;
+      --pale: #eef6ff;
+      --text: #243b53;
+      --muted: #627d98;
+      --border: #d9e2ec;
+      --white: #ffffff;
+      --shadow: 0 12px 30px rgba(16, 42, 67, 0.10);
+    }
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    * { box-sizing: border-box; }
 
-    <title>Mathan | Data Science Portfolio</title>
+    html { scroll-behavior: smooth; }
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: #f7f9fc;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    .site-header {
+      background: linear-gradient(135deg, var(--navy), #1f5f99);
+      color: var(--white);
+      padding: 34px 20px 26px;
+      text-align: center;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            color: #243447;
-            background-color: #f4f7fa;
-        }
+    .site-header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.2;
+    }
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: #102a43;
-            color: white;
-        }
+    .site-header p {
+      margin: 10px 0 0;
+      color: #d9ecff;
+      font-size: 1.05rem;
+    }
 
-        nav {
-            max-width: 1100px;
-            margin: auto;
-            padding: 16px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .tabs-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 16px rgba(16, 42, 67, 0.07);
+    }
 
-        nav h1 {
-            margin: 0;
-            font-size: 1.3rem;
-        }
+    .tabs {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      overflow-x: auto;
+    }
 
-        nav ul {
-            display: flex;
-            gap: 22px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
+    .tab-button {
+      padding: 17px 28px;
+      border: 0;
+      border-bottom: 4px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
 
-        nav a {
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    .tab-button:hover,
+    .tab-button:focus-visible {
+      color: var(--blue);
+      background: var(--pale);
+      outline: none;
+    }
 
-        nav a:hover {
-            color: #66d9ef;
-        }
+    .tab-button.active {
+      color: var(--blue-dark);
+      border-bottom-color: var(--blue);
+    }
 
-        main {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 24px;
-        }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 42px 20px 60px;
+    }
 
-        section {
-            padding: 75px 0;
-            scroll-margin-top: 75px;
-        }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.25s ease; }
 
-        .hero {
-            min-height: 75vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        .hero h2 {
-            margin-bottom: 10px;
-            font-size: 2.7rem;
-            color: #102a43;
-        }
+    h2 {
+      margin: 0 0 22px;
+      color: var(--navy);
+      font-size: clamp(1.7rem, 4vw, 2.25rem);
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-        }
+    h3 { color: var(--navy); line-height: 1.35; }
 
-        .button {
-            display: inline-block;
-            width: fit-content;
-            margin: 18px auto 0;
-            padding: 12px 20px;
-            color: white;
-            background-color: #0077b6;
-            border-radius: 6px;
-            text-decoration: none;
-        }
+    .about-card,
+    .project-card,
+    .detail-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
 
-        .button:hover {
-            background-color: #005f8f;
-        }
+    .about-card { padding: clamp(24px, 5vw, 48px); }
 
-        h2 {
-            color: #102a43;
-            font-size: 2rem;
-        }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--blue-dark);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 22px;
-        }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 25px 0;
+    }
 
-        .skill {
-            padding: 8px 14px;
-            color: #005f8f;
-            background-color: #dff3ff;
-            border-radius: 20px;
-            font-weight: bold;
-        }
+    .skill {
+      padding: 7px 12px;
+      border: 1px solid #b8d8ff;
+      border-radius: 999px;
+      background: var(--pale);
+      color: #124e89;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
 
-        .project-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
-        }
+    .button {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 7px;
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-        .project-card {
-            padding: 25px;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 6px 18px rgba(16, 42, 67, 0.1);
-        }
+    .button:hover { background: var(--blue-dark); }
 
-        .project-card h3 {
-            margin-top: 0;
-            color: #0077b6;
-        }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
 
-        .project-card a {
-            color: #0077b6;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    .project-card {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding: 21px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-        footer {
-            padding: 25px;
-            color: white;
-            background-color: #102a43;
-            text-align: center;
-        }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(16, 42, 67, 0.15);
+    }
 
-        @media (max-width: 700px) {
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
+    .project-number {
+      min-width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 800;
+    }
 
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+    .project-card h3 { margin: 2px 0 5px; font-size: 1.05rem; }
+    .project-card p { margin: 0; color: var(--muted); font-size: 0.94rem; }
 
-            .hero h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    .detail-card {
+      margin-bottom: 22px;
+      padding: clamp(22px, 4vw, 34px);
+      scroll-margin-top: 90px;
+    }
+
+    .detail-card h3 { margin: 0 0 13px; font-size: 1.35rem; }
+    .detail-card p { margin: 8px 0; }
+    .detail-card ul { margin: 8px 0 0; padding-left: 22px; }
+    .label { color: var(--navy); font-weight: 800; }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 16px;
+      color: var(--blue-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 24px 20px;
+      background: var(--navy);
+      color: #d9ecff;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .tab-button { flex: 1; padding: 14px 12px; font-size: 0.9rem; }
+      main { padding-top: 28px; }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="site-header">
+    <h1>Mathan Kumar Kodirajan</h1>
+    <p>Data Science • Machine Learning • Generative AI</p>
+  </header>
 
-    <header>
-        <nav>
-            <h1>Mathan</h1>
+  <nav class="tabs-wrap" aria-label="Portfolio sections">
+    <div class="tabs" role="tablist">
+      <button class="tab-button active" id="about-tab" role="tab" aria-selected="true" aria-controls="about" data-tab="about">About Me</button>
+      <button class="tab-button" id="project-list-tab" role="tab" aria-selected="false" aria-controls="project-list" data-tab="project-list">Project List</button>
+      <button class="tab-button" id="project-details-tab" role="tab" aria-selected="false" aria-controls="project-details" data-tab="project-details">Project Details</button>
+    </div>
+  </nav>
 
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <main>
+    <section id="about" class="tab-content active" role="tabpanel" aria-labelledby="about-tab">
+      <div class="about-card">
+        <p class="eyebrow">About Me</p>
+        <h2>Data science professional focused on practical AI solutions</h2>
+        <p>
+          I am Mathan Kumar Kodirajan, a data science professional with graduate-level experience in machine learning, predictive analytics, statistical analysis, data visualization, time-series forecasting, and generative AI. My projects focus on turning real-world data into clear insights and useful applications.
+        </p>
+        <p>
+          I also bring professional experience in software quality assurance, test leadership, release coordination, and onsite-offshore team collaboration. This combination helps me approach data science projects with attention to accuracy, reliability, business value, and responsible AI practices.
+        </p>
 
-    <main>
+        <div class="skills" aria-label="Technical skills">
+          <span class="skill">Python</span>
+          <span class="skill">Pandas</span>
+          <span class="skill">NumPy</span>
+          <span class="skill">Scikit-learn</span>
+          <span class="skill">XGBoost</span>
+          <span class="skill">TensorFlow</span>
+          <span class="skill">Hugging Face</span>
+          <span class="skill">LangChain</span>
+          <span class="skill">MLflow</span>
+          <span class="skill">Streamlit</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Data Visualization</span>
+        </div>
 
-        <section id="home" class="hero">
-            <h2>Mathan's Data Science Portfolio</h2>
+        <a class="button" href="https://github.com/Mathan-MS" target="_blank" rel="noopener noreferrer">View My GitHub</a>
+      </div>
+    </section>
 
-            <p>
-                Data Analytics, Machine Learning, Forecasting,
-                Visualization, and Generative AI
-            </p>
+    <section id="project-list" class="tab-content" role="tabpanel" aria-labelledby="project-list-tab">
+      <h2>Project List</h2>
+      <div class="project-grid">
+        <article class="project-card" data-project="project1" tabindex="0"><span class="project-number">1</span><div><h3>AI-Based System for Residential Energy Efficiency Optimization</h3><p>Generative AI recommendations for reducing residential energy consumption.</p></div></article>
+        <article class="project-card" data-project="project2" tabindex="0"><span class="project-number">2</span><div><h3>Telecom Customer Churn Prediction</h3><p>Classification models for identifying customers at risk of leaving.</p></div></article>
+        <article class="project-card" data-project="project3" tabindex="0"><span class="project-number">3</span><div><h3>Childcare Cost Affordability Analysis</h3><p>Analysis of childcare prices and affordability across the United States.</p></div></article>
+        <article class="project-card" data-project="project4" tabindex="0"><span class="project-number">4</span><div><h3>MovieLens Hybrid Recommendation System</h3><p>A movie recommender combining collaborative and content-based methods.</p></div></article>
+        <article class="project-card" data-project="project5" tabindex="0"><span class="project-number">5</span><div><h3>U.S. Retail Sales Forecasting Using SARIMA</h3><p>Time-series forecasting of monthly U.S. retail sales.</p></div></article>
+        <article class="project-card" data-project="project6" tabindex="0"><span class="project-number">6</span><div><h3>Netflix Top-10 Content Trend Analysis</h3><p>Exploration of content popularity, categories, and viewing trends.</p></div></article>
+        <article class="project-card" data-project="project7" tabindex="0"><span class="project-number">7</span><div><h3>Dodgers Attendance and Promotion Analysis</h3><p>Investigation of promotional factors associated with game attendance.</p></div></article>
+        <article class="project-card" data-project="project8" tabindex="0"><span class="project-number">8</span><div><h3>Generative AI Invoice Information Extraction</h3><p>Structured extraction of invoice data from PDF documents.</p></div></article>
+        <article class="project-card" data-project="project9" tabindex="0"><span class="project-number">9</span><div><h3>RAG-Based Question-Answering Assistant</h3><p>Document-grounded answers using retrieval-augmented generation.</p></div></article>
+        <article class="project-card" data-project="project10" tabindex="0"><span class="project-number">10</span><div><h3>Generative AI Observability Using MLflow</h3><p>Tracking model configuration, latency, tokens, prompts, and responses.</p></div></article>
+      </div>
+    </section>
 
-            <a href="#projects" class="button">
-                View My Projects
-            </a>
-        </section>
+    <section id="project-details" class="tab-content" role="tabpanel" aria-labelledby="project-details-tab">
+      <h2>Project Details</h2>
 
-        <section id="about">
-            <h2>About Me</h2>
+      <article class="detail-card" id="project1">
+        <h3>1. AI-Based System for Residential Energy Efficiency Optimization</h3>
+        <p><span class="label">Project overview:</span> Developed a generative AI system that analyzes household energy conditions and produces practical energy-saving recommendations. The work used the Appliances Energy Prediction dataset and transformed energy, temperature, humidity, and weather measurements into structured prompt-response examples.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, GPT-2, Hugging Face Transformers, LoRA/PEFT, PyTorch, and Streamlit.</p>
+        <ul>
+          <li>Generated household-specific energy-efficiency suggestions.</li>
+          <li>Evaluated response format, relevance, and hallucination risk.</li>
+          <li>Designed the solution for an interactive Streamlit interface.</li>
+        </ul>
+        <a class="back-link" href="#project-list">← Return to Project List</a>
+      </article>
 
-            <p>
-                I am a data science professional with graduate-level
-                experience in machine learning, predictive analytics,
-                statistical analysis, data visualization, time-series
-                forecasting, and Generative AI.
-            </p>
+      <article class="detail-card" id="project2">
+        <h3>2. Telecom Customer Churn Prediction</h3>
+        <p><span class="label">Project overview:</span> Built and compared machine-learning models using a telecom dataset containing 7,043 customer records and 21 original columns. Data preparation included missing-value handling, categorical encoding, scaling, feature engineering, stratified splitting, and SMOTE on training data only.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, Scikit-learn, XGBoost, imbalanced-learn, Matplotlib, and Seaborn.</p>
+        <ul>
+          <li>Compared Logistic Regression, Random Forest, and XGBoost.</li>
+          <li>Logistic Regression achieved ROC-AUC of approximately 0.837 and recall of approximately 0.738.</li>
+          <li>Random Forest achieved the highest accuracy at approximately 0.766.</li>
+        </ul>
+        <a class="back-link" href="#project-list">← Return to Project List</a>
+      </article>
 
-            <p>
-                My projects focus on transforming real-world data into
-                practical insights and AI-powered solutions. I have
-                experience developing classification models,
-                recommendation systems, forecasting models,
-                Retrieval-Augmented Generation applications, and
-                fine-tuned language models.
-            </p>
+      <article class="detail-card" id="project3">
+        <h3>3. Childcare Cost Affordability Analysis</h3>
+        <p><span class="label">Project overview:</span> Analyzed the National Database of Childcare Prices to understand how childcare costs differ across states, counties, provider types, and age groups. The project focused on presenting affordability patterns through clear visual analysis.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, Matplotlib, Seaborn, and data visualization tools.</p>
+        <ul>
+          <li>Compared center-based and home-based childcare costs.</li>
+          <li>Examined geographic differences and affordability trends.</li>
+          <li>Translated complex pricing data into understandable visuals.</li>
+        </ul>
+        <a class="back-link" href="#project-list">← Return to Project List</a>
+      </article>
 
-            <p>
-                I also bring professional experience in software quality
-                assurance, test leadership, release management, and
-                coordinating onsite and offshore teams.
-            </p>
+      <article class="detail-card" id="project4">
+        <h3>4. MovieLens Hybrid Recommendation System</h3>
+        <p><span class="label">Project overview:</span> Created a hybrid recommendation system using the MovieLens small dataset. The solution combined collaborative filtering with content-based information to generate personalized movie recommendations.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, NumPy, Scikit-learn, and recommendation-system techniques.</p>
+        <ul>
+          <li>Prepared user-rating and movie-metadata information.</li>
+          <li>Combined complementary recommendation approaches.</li>
+          <li>Generated ranked movie suggestions for users.</li>
+        </ul>
+        <a class="back-link" href="#project-list">← Return to Project List</a>
+      </article>
 
-            <h3>Technical Skills</h3>
+      <article class="detail-card" id="project5">
+        <h3>5. U.S. Retail Sales Forecasting Using SARIMA</h3>
+        <p><span class="label">Project overview:</span> Developed a SARIMA time-series model to forecast monthly U.S. retail sales. Historical data from January 1992 through June 2020 was used for training, while July 2020 through June 2021 was reserved for testing.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, Statsmodels, Matplotlib, and time-series analysis.</p>
+        <ul>
+          <li>Analyzed trend and seasonal behavior.</li>
+          <li>Produced forecasts with confidence intervals.</li>
+          <li>Achieved a test RMSE of approximately 59,819.</li>
+        </ul>
+        <a class="back-link" href="#project-list">← Return to Project List</a>
+      </article>
 
-            <div class="skills">
-                <span class="skill">Python</span>
-                <span class="skill">SQL</span>
-                <span class="skill">Pandas</span>
-                <span class="skill">Scikit-learn</span>
-                <span class="skill">XGBoost</span>
-                <span class="skill">TensorFlow</span>
-                <span class="skill">Hugging Face</span>
-                <span class="skill">GPT-2</span>
-                <span class="skill">LoRA</span>
-                <span class="skill">LangChain</span>
-                <span class="skill">MLflow</span>
-                <span class="skill">Streamlit</span>
-            </div>
-        </section>
+      <article class="detail-card" id="project6">
+        <h3>6. Netflix Top-10 Content Trend Analysis</h3>
+        <p><span class="label">Project overview:</span> Explored Netflix Top-10 data to identify patterns in content type, popularity, viewing performance, and changes over time.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, Matplotlib, Seaborn, and exploratory data analysis.</p>
+        <ul>
+          <li>Compared the performance of movies and television content.</li>
+          <li>Identified popular titles and recurring patterns.</li>
+          <li>Created visual summaries for communicating key findings.</li>
+        </ul>
+        <a class="back-link" href="#project-list">← Return to Project List</a>
+      </article>
 
-        <section id="projects">
-            <h2>Projects</h2>
+      <article class="detail-card" id="project7">
+        <h3>7. Dodgers Attendance and Promotion Analysis</h3>
+        <p><span class="label">Project overview:</span> Investigated the relationship between Los Angeles Dodgers promotions and game attendance, including the effect of bobblehead giveaways.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, Matplotlib, Seaborn, and statistical analysis.</p>
+        <ul>
+          <li>Compared attendance across promotional and non-promotional games.</li>
+          <li>Bobblehead games averaged approximately 53,144 attendees, compared with approximately 39,138 without bobbleheads.</li>
+          <li>Presented actionable insights for event-promotion planning.</li>
+        </ul>
+        <a class="back-link" href="#project-list">← Return to Project List</a>
+      </article>
 
-            <div class="project-grid">
+      <article class="detail-card" id="project8">
+        <h3>8. Generative AI Invoice Information Extraction</h3>
+        <p><span class="label">Project overview:</span> Built an application that reads invoice PDFs and uses a generative AI model to extract important fields into structured JSON.</p>
+        <p><span class="label">Tools and technologies:</span> Python, PyMuPDF, OpenAI API, GPT-4.1-mini, JSON, and prompt engineering.</p>
+        <ul>
+          <li>Extracted invoice number, vendor, bill-to information, line items, and totals.</li>
+          <li>Returned consistent machine-readable JSON.</li>
+          <li>Demonstrated how document processing can reduce manual entry.</li>
+        </ul>
+        <a class="back-link" href="#project-list">← Return to Project List</a>
+      </article>
 
-                <article class="project-card">
-                    <h3>
-                        AI-Powered Residential Energy Efficiency Advisor
-                    </h3>
+      <article class="detail-card" id="project9">
+        <h3>9. RAG-Based Question-Answering Assistant</h3>
+        <p><span class="label">Project overview:</span> Created a retrieval-augmented generation assistant that retrieves relevant document sections before generating an answer. This approach improves grounding and reduces unsupported responses.</p>
+        <p><span class="label">Tools and technologies:</span> Python, LangChain, Chroma, OpenAI embeddings, document loaders, and vector search.</p>
+        <ul>
+          <li>Loaded, divided, embedded, and indexed source documents.</li>
+          <li>Retrieved relevant context for each question.</li>
+          <li>Kept answers grounded in the available source material.</li>
+        </ul>
+        <a class="back-link" href="#project-list">← Return to Project List</a>
+      </article>
 
-                    <p>
-                        Fine-tuned GPT-2 using LoRA to generate
-                        residential energy-efficiency recommendations.
-                    </p>
+      <article class="detail-card" id="project10">
+        <h3>10. Generative AI Observability Using MLflow</h3>
+        <p><span class="label">Project overview:</span> Implemented an MLflow-based workflow for observing a generative AI application. The project tracked model settings, token usage, response time, prompts, outputs, and execution details.</p>
+        <p><span class="label">Tools and technologies:</span> Python, MLflow, OpenAI API, GPT-3.5-turbo, and tiktoken.</p>
+        <ul>
+          <li>Logged model parameters and generated responses.</li>
+          <li>Measured token usage and response latency.</li>
+          <li>Improved experiment comparison and troubleshooting.</li>
+        </ul>
+        <a class="back-link" href="#project-list">← Return to Project List</a>
+      </article>
+    </section>
+  </main>
 
-                    <a href="#project1">View Project Details</a>
-                </article>
+  <footer>
+    <p>&copy; <span id="year"></span> Mathan Kumar Kodirajan • <a href="https://github.com/Mathan-MS" target="_blank" rel="noopener noreferrer" style="color:#ffffff;">GitHub</a></p>
+  </footer>
 
-                <article class="project-card">
-                    <h3>Telecom Customer Churn Prediction</h3>
+  <script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const panels = document.querySelectorAll('.tab-content');
 
-                    <p>
-                        Compared Logistic Regression, Random Forest, and
-                        XGBoost models for identifying customers at risk
-                        of leaving.
-                    </p>
+    function showTab(tabId, projectId = '') {
+      panels.forEach(panel => panel.classList.toggle('active', panel.id === tabId));
+      buttons.forEach(button => {
+        const selected = button.dataset.tab === tabId;
+        button.classList.toggle('active', selected);
+        button.setAttribute('aria-selected', selected ? 'true' : 'false');
+      });
 
-                    <a href="#project2">View Project Details</a>
-                </article>
+      if (projectId) {
+        requestAnimationFrame(() => document.getElementById(projectId)?.scrollIntoView({ behavior: 'smooth' }));
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
 
-                <article class="project-card">
-                    <h3>Childcare Cost Affordability Analysis</h3>
+    buttons.forEach(button => button.addEventListener('click', () => {
+      history.replaceState(null, '', '#' + button.dataset.tab);
+      showTab(button.dataset.tab);
+    }));
 
-                    <p>
-                        Analyzed geographic and economic trends in
-                        childcare prices across the United States.
-                    </p>
+    function openProject(projectId) {
+      history.replaceState(null, '', '#' + projectId);
+      showTab('project-details', projectId);
+    }
 
-                    <a href="#project3">View Project Details</a>
-                </article>
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', () => openProject(card.dataset.project));
+      card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openProject(card.dataset.project);
+        }
+      });
+    });
 
-                <article class="project-card">
-                    <h3>MovieLens Hybrid Recommendation System</h3>
+    document.querySelectorAll('.back-link').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        history.replaceState(null, '', '#project-list');
+        showTab('project-list');
+      });
+    });
 
-                    <p>
-                        Combined collaborative filtering and
-                        content-based methods to recommend movies.
-                    </p>
+    const initialHash = window.location.hash.slice(1);
+    if (/^project\d+$/.test(initialHash)) {
+      showTab('project-details', initialHash);
+    } else if (['about', 'project-list', 'project-details'].includes(initialHash)) {
+      showTab(initialHash);
+    }
 
-                    <a href="#project4">View Project Details</a>
-                </article>
-
-                <article class="project-card">
-                    <h3>U.S. Retail Sales Forecasting</h3>
-
-                    <p>
-                        Applied SARIMA time-series modeling to analyze
-                        and forecast retail sales.
-                    </p>
-
-                    <a href="#project5">View Project Details</a>
-                </article>
-
-                <article class="project-card">
-                    <h3>Netflix Top-10 Content Trend Analysis</h3>
-
-                    <p>
-                        Examined content popularity, categories, and
-                        viewing trends using Netflix Top-10 data.
-                    </p>
-
-                    <a href="#project6">View Project Details</a>
-                </article>
-
-                <article class="project-card">
-                    <h3>Dodgers Attendance and Promotion Analysis</h3>
-
-                    <p>
-                        Evaluated how promotional events influenced
-                        Los Angeles Dodgers attendance.
-                    </p>
-
-                    <a href="#project7">View Project Details</a>
-                </article>
-
-                <article class="project-card">
-                    <h3>Generative AI Invoice Extraction</h3>
-
-                    <p>
-                        Extracted invoice information from PDF documents
-                        and returned structured JSON results.
-                    </p>
-
-                    <a href="#project8">View Project Details</a>
-                </article>
-
-                <article class="project-card">
-                    <h3>RAG-Based Question-Answering Assistant</h3>
-
-                    <p>
-                        Developed a document question-answering system
-                        using retrieval, embeddings, and language models.
-                    </p>
-
-                    <a href="#project9">View Project Details</a>
-                </article>
-
-                <article class="project-card">
-                    <h3>Generative AI Observability Using MLflow</h3>
-
-                    <p>
-                        Tracked model configuration, token usage,
-                        latency, prompts, and generated responses.
-                    </p>
-
-                    <a href="#project10">View Project Details</a>
-                </article>
-
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-
-            <p>
-                GitHub:
-                <a href="https://github.com/Mathan-MS">
-                    github.com/Mathan-MS
-                </a>
-            </p>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>© 2026 Mathan. All rights reserved.</p>
-    </footer>
-
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
