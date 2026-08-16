@@ -2,17 +2,395 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
     <title>Mathan | Data Science Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #243447;
+            background-color: #f4f7fa;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #102a43;
+            color: white;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 22px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #66d9ef;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 75px 0;
+            scroll-margin-top: 75px;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h2 {
+            margin-bottom: 10px;
+            font-size: 2.7rem;
+            color: #102a43;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .button {
+            display: inline-block;
+            width: fit-content;
+            margin: 18px auto 0;
+            padding: 12px 20px;
+            color: white;
+            background-color: #0077b6;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #005f8f;
+        }
+
+        h2 {
+            color: #102a43;
+            font-size: 2rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .skill {
+            padding: 8px 14px;
+            color: #005f8f;
+            background-color: #dff3ff;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .project-card {
+            padding: 25px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(16, 42, 67, 0.1);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: #0077b6;
+        }
+
+        .project-card a {
+            color: #0077b6;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 25px;
+            color: white;
+            background-color: #102a43;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Mathan's Data Science Portfolio</h1>
 
-    <p>My portfolio website is under development.</p>
+    <header>
+        <nav>
+            <h1>Mathan</h1>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="home" class="hero">
+            <h2>Mathan's Data Science Portfolio</h2>
+
+            <p>
+                Data Analytics, Machine Learning, Forecasting,
+                Visualization, and Generative AI
+            </p>
+
+            <a href="#projects" class="button">
+                View My Projects
+            </a>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>
+                I am a data science professional with graduate-level
+                experience in machine learning, predictive analytics,
+                statistical analysis, data visualization, time-series
+                forecasting, and Generative AI.
+            </p>
+
+            <p>
+                My projects focus on transforming real-world data into
+                practical insights and AI-powered solutions. I have
+                experience developing classification models,
+                recommendation systems, forecasting models,
+                Retrieval-Augmented Generation applications, and
+                fine-tuned language models.
+            </p>
+
+            <p>
+                I also bring professional experience in software quality
+                assurance, test leadership, release management, and
+                coordinating onsite and offshore teams.
+            </p>
+
+            <h3>Technical Skills</h3>
+
+            <div class="skills">
+                <span class="skill">Python</span>
+                <span class="skill">SQL</span>
+                <span class="skill">Pandas</span>
+                <span class="skill">Scikit-learn</span>
+                <span class="skill">XGBoost</span>
+                <span class="skill">TensorFlow</span>
+                <span class="skill">Hugging Face</span>
+                <span class="skill">GPT-2</span>
+                <span class="skill">LoRA</span>
+                <span class="skill">LangChain</span>
+                <span class="skill">MLflow</span>
+                <span class="skill">Streamlit</span>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <h3>
+                        AI-Powered Residential Energy Efficiency Advisor
+                    </h3>
+
+                    <p>
+                        Fine-tuned GPT-2 using LoRA to generate
+                        residential energy-efficiency recommendations.
+                    </p>
+
+                    <a href="#project1">View Project Details</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>Telecom Customer Churn Prediction</h3>
+
+                    <p>
+                        Compared Logistic Regression, Random Forest, and
+                        XGBoost models for identifying customers at risk
+                        of leaving.
+                    </p>
+
+                    <a href="#project2">View Project Details</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>Childcare Cost Affordability Analysis</h3>
+
+                    <p>
+                        Analyzed geographic and economic trends in
+                        childcare prices across the United States.
+                    </p>
+
+                    <a href="#project3">View Project Details</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>MovieLens Hybrid Recommendation System</h3>
+
+                    <p>
+                        Combined collaborative filtering and
+                        content-based methods to recommend movies.
+                    </p>
+
+                    <a href="#project4">View Project Details</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>U.S. Retail Sales Forecasting</h3>
+
+                    <p>
+                        Applied SARIMA time-series modeling to analyze
+                        and forecast retail sales.
+                    </p>
+
+                    <a href="#project5">View Project Details</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>Netflix Top-10 Content Trend Analysis</h3>
+
+                    <p>
+                        Examined content popularity, categories, and
+                        viewing trends using Netflix Top-10 data.
+                    </p>
+
+                    <a href="#project6">View Project Details</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>Dodgers Attendance and Promotion Analysis</h3>
+
+                    <p>
+                        Evaluated how promotional events influenced
+                        Los Angeles Dodgers attendance.
+                    </p>
+
+                    <a href="#project7">View Project Details</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>Generative AI Invoice Extraction</h3>
+
+                    <p>
+                        Extracted invoice information from PDF documents
+                        and returned structured JSON results.
+                    </p>
+
+                    <a href="#project8">View Project Details</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>RAG-Based Question-Answering Assistant</h3>
+
+                    <p>
+                        Developed a document question-answering system
+                        using retrieval, embeddings, and language models.
+                    </p>
+
+                    <a href="#project9">View Project Details</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>Generative AI Observability Using MLflow</h3>
+
+                    <p>
+                        Tracked model configuration, token usage,
+                        latency, prompts, and generated responses.
+                    </p>
+
+                    <a href="#project10">View Project Details</a>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+
+            <p>
+                GitHub:
+                <a href="https://github.com/Mathan-MS">
+                    github.com/Mathan-MS
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Mathan. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
