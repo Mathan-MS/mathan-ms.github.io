@@ -1,0 +1,3 @@
+Model,Correctly Formatted Responses,Total Scenarios,Format Accuracy
+Original GPT-2,0,5,0.0%
+LoRA Fine-Tuned GPT-2,5,5,100.0%

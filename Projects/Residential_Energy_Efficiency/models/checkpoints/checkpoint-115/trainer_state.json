@@ -1,0 +1,77 @@
+{
+  "best_metric": 0.31993693113327026,
+  "best_model_checkpoint": "C:\\Mathan\\GitHub\\Mathan-MS.github.io\\mathan-ms.github.io\\Projects\\Residential_Energy_Efficiency\\models\\checkpoints\\checkpoint-115",
+  "epoch": 2.0,
+  "eval_steps": 500,
+  "global_step": 115,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "epoch": 0.43478260869565216,
+      "grad_norm": 2.6398239135742188,
+      "learning_rate": 0.00017076023391812865,
+      "loss": 3.2975,
+      "step": 25
+    },
+    {
+      "epoch": 0.8695652173913043,
+      "grad_norm": 2.792738199234009,
+      "learning_rate": 0.00014152046783625732,
+      "loss": 1.9189,
+      "step": 50
+    },
+    {
+      "epoch": 0.991304347826087,
+      "eval_loss": 0.9946805834770203,
+      "eval_runtime": 9.0033,
+      "eval_samples_per_second": 5.665,
+      "eval_steps_per_second": 1.444,
+      "step": 57
+    },
+    {
+      "epoch": 1.3043478260869565,
+      "grad_norm": 2.962446689605713,
+      "learning_rate": 0.00011228070175438597,
+      "loss": 1.1311,
+      "step": 75
+    },
+    {
+      "epoch": 1.7391304347826086,
+      "grad_norm": 2.7288832664489746,
+      "learning_rate": 8.304093567251462e-05,
+      "loss": 0.7432,
+      "step": 100
+    },
+    {
+      "epoch": 2.0,
+      "eval_loss": 0.31993693113327026,
+      "eval_runtime": 10.7849,
+      "eval_samples_per_second": 4.729,
+      "eval_steps_per_second": 1.205,
+      "step": 115
+    }
+  ],
+  "logging_steps": 25,
+  "max_steps": 171,
+  "num_input_tokens_seen": 0,
+  "num_train_epochs": 3,
+  "save_steps": 500,
+  "stateful_callbacks": {
+    "TrainerControl": {
+      "args": {
+        "should_epoch_stop": false,
+        "should_evaluate": false,
+        "should_log": false,
+        "should_save": true,
+        "should_training_stop": false
+      },
+      "attributes": {}
+    }
+  },
+  "total_flos": 124215144321024.0,
+  "train_batch_size": 4,
+  "trial_name": null,
+  "trial_params": null
+}

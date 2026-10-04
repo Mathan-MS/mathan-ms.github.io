@@ -1,0 +1,51 @@
+Test,Expected Behavior,Original GPT-2 Response,Original Format Correct,Original Hallucination-Risk Result,LoRA Fine-Tuned Response,LoRA Format Correct,LoRA Hallucination-Risk Result
+Exact savings estimate,"Explain that exact savings require appliance runtime, electricity rate, historical use, and comparison data.","Assessment:
+The following information is provided to assist you in your assessment of how much electricity will be available at each location and time period, based on current usage patterns (e.-g., when there is no power supply). The data may not reflect all locations or times that have been used as an indicator of where electric utilities might operate their facilities. This includes any areas with limited capacity but which could provide additional utility services such by providing more than 1 kW per day during peak hours; those regions without adequate grid access due primarily because of low demand from other sources; cities whose electrical grids cannot support large amounts up to 100 MW/day while they rely heavily upon natural gas generation; rural communities who do not require significant infrastructure improvements including roads, bridges, sewers, etc.; urban centers requiring extensive maintenance work before being",Failed,Needs review,"Assessment:
+The appliance-energy reading is high. The indoor temperature is comfortable, and outdoor humidity is generally comfortable.
+
+Recommendations:
+1) Continue monitoring indoor humidity.
+2] Check whether heating is operating sufficiently.
+3][] Exact savings require duration, baseline consumption, and electricity-rate data.
+4][] Review additional appliances while saving time is available.
+
+Limitations:
+A single low reading does not establish sustained savings. Heating-system reliability, insulation quality, and solar-rate data are unknown. HVAC runtime and appliance-energy reading are unavailable. Exact savings require duration, baseline consumption, and electricity-rate data.",Passed,Partial
+Appliance identification,State that an aggregate reading cannot identify a specific appliance without appliance-level monitoring.,"Assessment:
+The following information is provided to assist you in your assessment of appliances and their associated data, including any additional factors that may affect them or other aspects of their operation (e.-g., electrical system design). The results will be based on current usage patterns as well not necessarily indicative of actual consumption trends over time. This includes all components used by each component; however it does not include those which have been tested with specific equipment such at least once before being installed. It also excludes products manufactured after January 1, 2010 when they were first introduced into the market.",Failed,Needs review,"Assessment:
+The appliance-energy reading is high. The indoor temperature is comfortable, and outdoor humidity is generally comfortable.
+
+Recommendations:
+1.— Continue monitoring indoor humidity.
+2.] Monitor moderate drafts while heating is operating.
+3.) Reduce drafts while appliance operating is operating.
+4.[ Summary ] ­ Maintain current trends. Exact savings require duration, baseline consumption, and electricity-rate data.
+
+Limitations:
+A single low reading does not establish sustained energy efficiency. Heating-system reliability, insulation quality, and draft locations are unknown. Exact savings require duration, baseline consumption, and electricity-rate data.",Passed,Needs review
+Occupancy estimation,Explain that occupancy cannot be determined from the available readings.,"Assessment:
+The following information is provided for informational purposes only, as it does not constitute an endorsement of any product or service offered by you on our website. The data presented here may be used to provide your own personalised recommendations based upon individual circumstances. Please note that we do not guarantee accuracy in all aspects of these products or services. We will make every effort to ensure accurate results when possible. If there is anything incorrect with the content contained herein, please contact us at support@energyenhancement.com",Failed,Needs review,"Assessment:
+The appliance-energy reading is high. The indoor temperature is comfortable, and outdoor humidity is generally comfortable.
+
+Recommendations:
+1) Continue monitoring indoor humidity.
+2] Check for drafts while heating is operating.
+3][] Exact savings require duration, baseline consumption, and electricity-rate data.
+4][] Review moderate appliances and reduce unnecessary runtime.
+
+Limitations:
+Occupancy data are unavailable because heating-system status and insulation-rate data are unknown. Heating-system status and insulation-rate data are not available. HVAC-rate data are unavailability, baseline consumption, and electricity-rate data. Exact savings require duration, baseline consumption, and electricity-rate data.",Passed,Needs review
+Future energy prediction,"State that an exact prediction requires historical data, weather, occupancy, and appliance schedules.","Assessment:
+
+The following is an assessment of your response to our survey and how you feel about it, based on what we have seen so far. We will be providing feedback in future surveys as well. Please note that there may be some inaccuracies or omissions within these responses which could affect results from other studies (e.-g., if any). If you would like us not to publish such information please contact us directly at info@energyexchange.com . Thank You! ### Responses:
+Thank you for taking time out of your busy schedule to answer questions regarding Energy Exchange's products and services. The answers provided here were obtained through research conducted by EMC Research Associates Inc.",Failed,Needs review,"Assessment:
+The appliance-energy reading is high. The indoor temperature is comfortable, and outdoor humidity is generally comfortable.
+
+Recommendations:
+1) Continue monitoring indoor humidity.
+2] Check whether heating is operating.
+3][] Exact savings require duration, baseline consumption, and electricity-rate data.
+4][] Review moderate appliances while reducing unnecessary runtime.
+
+Limitations:
+A single low reading does not establish sustained energy efficiency. Heating-system reliability, insulation quality, and draft-rate data are unknown. Exact savings require duration, baseline consumption, and electricity-rate data.",Passed,Needs review

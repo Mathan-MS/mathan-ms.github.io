@@ -1,0 +1,12 @@
+Stage,Metric,Value
+Training,Runtime (seconds),931.32
+Training,Samples per second,1.48
+Training,Steps per second,0.18
+Training,Total FLOPs,"184,821,799,956,480"
+Training,Average training loss,1.230053
+Training,Completed epochs,3
+Validation,Validation loss,0.216380
+Validation,Runtime (seconds),8.18
+Validation,Samples per second,6.24
+Validation,Steps per second,1.59
+Validation,Completed epochs,3

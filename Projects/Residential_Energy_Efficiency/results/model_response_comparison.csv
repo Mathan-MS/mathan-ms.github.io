@@ -1,0 +1,85 @@
+Scenario,Original GPT-2 Response,LoRA Fine-Tuned Response,Original Format Correct,LoRA Format Correct
+Moderate appliance use,"Assessment:
+
+The following is an assessment of your response to our recommendations and how you can improve on them in order for us, as well as other clients, be able take action against any potential violations or problems with these products that may occur during their usage. We will not accept complaints about product misuse from third parties unless they have been specifically identified by one of our experts (see below). If we find something wrong with your system please contact Customer Service at 1-800-843–7000 if it has anything to do w/it's own issues.","Assessment:
+The appliance-energy reading is moderate. The indoor temperature is comfortable, and outdoor humidity is generally comfortable.
+
+Recommendations:
+for further evaluation:
+1) Check heating schedules, drafts, insulation, and insulation.
+2] Continue monitoring indoor humidity.
+3][] Reduce drafts while heating is operating.
+4][] Monitor moderate standby loads.
+5][] Review high-load appliances and avoid unnecessary simultaneous operation.
+
+Limitations:
+A single low reading does not establish sustained savings. Exact savings require duration, baseline consumption, and electricity-rate data. Historical trends must be established to confirm sustained savings. Exact savings require duration, baseline consumption, and electricity-rate data.",False,True
+High indoor temperature,"Assessment:
+
+The following is an assessment of your response to our recommendations and how you can improve on them in order for us, as well as other clients, be able take action against any potential violations or problems with these products that may occur during their usage. We will not accept complaints about product misuse from third parties unless they have been specifically identified by one of our experts (see below). If we find something wrong with your system please contact Customer Service at 1-800-843–7000 if it has anything to do w/it's own issues.","Assessment:
+The appliance-energy reading is moderate. The indoor temperature is warm, and outdoor temperatures are generally comfortable.
+
+Recommendations:
+for further evaluation:
+1) Check heating schedules, drafts, insulation, and insulation.
+2] Continue monitoring indoor humidity.
+3][] Reduce drafts while heating is operating.
+4][] Monitor moderate standby loads.
+5][] Review high-load appliances and reduce unnecessary runtime time.
+
+Limitations:
+A single low reading does not establish sustained savings. Exact savings require duration, baseline consumption, and electricity-rate data. Historical trends must be established to confirm sustained savings. Exact savings require duration, baseline consumption, and electricity-rate data.",False,True
+Low appliance consumption,"Assessment:
+
+The following is an assessment of your response to our recommendations and how you can improve on them in order for us, as well as other clients, be able take action against any potential violations or problems with these products that may occur during their usage. We will not accept complaints about product misuse from third parties unless they have been specifically identified by one of our experts (see below). If we find something wrong with your system please contact Customer Service at 1-800-843–7000 if it has anything to do w/it's own review process.","Assessment:
+The appliance-energy reading is low. The indoor temperature is comfortable, and outdoor humidity is generally comfortable.
+
+Recommendations:
+for further evaluation:
+1) Check heating schedules, drafts, insulation, and insulation.
+2] Continue monitoring indoor humidity.
+3][] Reduce drafts while heating is operating.
+4][] Monitor moderate standby loads.
+5][] Review high-load appliances and avoid unnecessary simultaneous operation.
+
+Limitations:
+A single low reading does not establish sustained savings. Exact savings require duration, baseline consumption, and electricity-rate data. Historical trends must be established to confirm sustained savings. Exact savings require duration, baseline consumption, and electricity-rate data.",False,True
+High appliance consumption,"Assessment:
+
+The following is an assessment of your response to our recommendations and how you can improve on them in order for us, as well as other clients, be able take action against any potential violations or problems with these products that may occur during their usage. We will not accept complaints about product misuse from third parties unless they have been specifically identified by one of our experts (see below). If we find something wrong with your system please contact Customer Service at support@energyexchange.com . ### Indoor Temperature Category: High
+Air Quality: Very Good
+Temperature Range: -40°F to +60° F
+Residential Energy Use: 100 kWh/day
+Energy Consumption: 1 kilowatt hour per day
+Inhalation Efficiency: 0.5 % / year
+Water Vapor Concentration: 10 mg m3
+Total Water Vapor Concentrations: 2 kgm2
+Sodium","Assessment:
+The appliance-energy reading is high. The indoor temperature is warm, and outdoor temperatures are generally comfortable.
+
+Recommendations:
+for further evaluation:
+1) Check heating schedules, drafts, insulation, and insulation.
+2] Continue monitoring indoor air quality.
+3][] Review moderate appliances while operating.
+4][] Reduce unnecessary standby time.
+5][]} Review more than typical appliance loads.
+
+Limitations:
+A single low reading does not establish sustained savings. Heating runtime, insulation quality, and draft locations are unknown. Exact savings require duration, baseline consumption, and electricity-rate data.",False,True
+Warm and humid indoor conditions,"Assessment:
+
+The following is an assessment of your response to our recommendations and how you can improve it in future projects. We will be providing feedback on each project as we develop them, but please note that these assessments may not reflect all aspects or results from any given work. Please contact us if you have questions about specific areas of interest for which there is no clear consensus among experts. ### Responses:
+We would like to thank everyone who has contributed so far! If you find yourself having issues with one of our suggestions (or feel strongly enough about something), then let us know by emailing support@energyenhancement.com .","Assessment:
+The appliance-energy reading is moderate. The indoor temperature is warm, and outdoor humidity is humid.
+
+Recommendations:
+for further evaluation:
+1) Check heating schedules, drafts, insulation, and insulation.
+2] Continue monitoring indoor humidity.
+3][] Reduce drafts while heating is operating.
+4][] Monitor moderate standby loads.
+5][] Review high-load appliances and reduce unnecessary runtime time.
+
+Limitations:
+A single low reading does not establish sustained savings. Heating runtime, draft locations, and insulation make determinants. Exact savings require duration, baseline consumption, and electricity-rate data.",False,True
