@@ -12,17 +12,12 @@ Childcare costs can impact family budgets, career decisions, and accessibility t
 
 The objectives of this project are:
 
-To analyze the trends in childcare costs through time.
-
-To analyze childcare costs between different states.
-
-To analyze differences between childcare types.
-
-To analyze childcare costs relative to family incomes.
-
-To find out where there are more affordability issues.
-
-To present the information by using visualization techniques.
+- To analyze the trends in childcare costs through time.
+- To analyze childcare costs between different states.
+- To analyze differences between childcare types.
+- To analyze childcare costs relative to family incomes.
+- To find out where there are more affordability issues.
+- To present the information by using visualization techniques.
 
 ## Dataset
 
@@ -30,7 +25,7 @@ This project uses the National Database of Childcare Prices, which contains info
 
 The analysis uses data from 2008-2018 and covers childcare costs, geographic area, type of childcare, and income levels.
 
-**Dataset Source:** [https://www.dol.gov/agencies/wb/topics/featured-childcare](https://www.dol.gov/agencies/wb/topics/featured-childcare)
+**Dataset Source:** https://www.dol.gov/agencies/wb/topics/featured-childcare
 
 Key variables include:
 
@@ -41,6 +36,7 @@ Key variables include:
 - Type of childcare
 - Household income
 - Geographic characteristics
+
 ## Tools & Technologies
 
 - Python
@@ -49,59 +45,42 @@ Key variables include:
 - NumPy
 - Matplotlib
 - Seaborn
+
 ## Project Workflow
 
 The project follows these main steps:
 
-Data Cleaning and Preparation
+1. **Data Cleaning and Preparation**
+   - Examined the structure of the data and variables provided.
+   - Identified missing values and inconsistencies.
+   - Prepared the data on prices for child care and family income for the analysis.
+   - Sorted the data by year, state, and type of child care.
 
-Examined the structure of the data and variables provided.
+2. **Exploratory Data Analysis**
+   - Explored the distribution of prices for child care.
+   - Comparing the prices for child care across different states and years.
+   - Comparing differences between types of child care and ages.
 
-Identified missing values and inconsistencies.
+3. **Affordability Analysis**
+   - Comparing prices of child care to the family income.
+   - Exploring the proportion of family income needed to cover the expenses of child care.
+   - Identifying differences in affordability by geographical location.
 
-Prepared the data on prices for child care and family income for the analysis.
-
-Sorted the data by year, state, and type of child care.
-
-Exploratory Data Analysis
-
-Explored the distribution of prices for child care.
-
-Comparing the prices for child care across different states and years.
-
-Comparing differences between types of child care and ages.
-
-Affordability Analysis
-
-Comparing prices of child care to the family income.
-
-Exploring the proportion of family income needed to cover the expenses of child care.
-
-Identifying differences in affordability by geographical location.
-
-Data Visualization
-
-Visualizing trends in prices for child care.
-
-Comparing costs between states and types of child care.
-
-understandably visualizing patterns of affordability.
+4. **Data Visualization**
+   - Visualizing trends in prices for child care.
+   - Comparing costs between states and types of child care.
+   - Understandably visualizing patterns of affordability.
 
 ## Key Findings
 
 Several significant patterns of U.S. childcare costs and affordability were revealed during the analysis:
 
-There were great differences in childcare costs among different locations.
-
-Childcare cost changes were observed throughout the period of the analysis.
-
-Cost of childcare varied depending on the age of the child and the childcare type.
-
-Infants' childcare costs were among the highest of all childcare types.
-
-A comparison of childcare costs and income made it possible to understand that there are differences in the financial impact of childcare expenses for different people living in different locations.
-
-Some locations and childcare types have been revealed where expenses may significantly take up the family budget.
+- There were great differences in childcare costs among different locations.
+- Childcare cost changes were observed throughout the period of the analysis.
+- Cost of childcare varied depending on the age of the child and the childcare type.
+- Infants' childcare costs were among the highest of all childcare types.
+- A comparison of childcare costs and income made it possible to understand that there are differences in the financial impact of childcare expenses for different people living in different locations.
+- Some locations and childcare types have been revealed where expenses may significantly take up the family budget.
 
 ## Outcome
 
@@ -111,30 +90,25 @@ The application of the three variables (cost of child care, location, and income
 
 ## Installation / Running the Project
 
-Clone the repository
+1. Clone the repository
 
 ```bash
 git clone <repo_url>
-```
-
-```bash
 cd <repository_name>
 ```
 
-Install the required packages
+2. Install the required packages
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Launch Jupyter Notebook
+3. Launch Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
 
-Open and run:
+4. Open and run:
 
-```text
-US_Childcare_Affordability_Analysis.ipynb
-```
+`US_Childcare_Affordability_Analysis.ipynb`
