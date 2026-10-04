@@ -326,16 +326,16 @@
     <section id="project-list" class="tab-content" role="tabpanel" aria-labelledby="project-list-tab">
       <h2>Project List</h2>
       <div class="project-grid">
-        <article class="project-card" data-project="project1" tabindex="0"><span class="project-number">1</span><div><h3>AI-Based System for Residential Energy Efficiency Optimization</h3><p>Generative AI recommendations for reducing residential energy consumption.</p></div></article>
-        <article class="project-card" data-project="project2" tabindex="0"><span class="project-number">2</span><div><h3>Telecom Customer Churn Prediction</h3><p>Classification models for identifying customers at risk of leaving.</p></div></article>
-        <article class="project-card" data-project="project3" tabindex="0"><span class="project-number">3</span><div><h3>Childcare Cost Affordability Analysis</h3><p>Analysis of childcare prices and affordability across the United States.</p></div></article>
-        <article class="project-card" data-project="project4" tabindex="0"><span class="project-number">4</span><div><h3>MovieLens Hybrid Recommendation System</h3><p>A movie recommender combining collaborative and content-based methods.</p></div></article>
-        <article class="project-card" data-project="project5" tabindex="0"><span class="project-number">5</span><div><h3>U.S. Retail Sales Forecasting Using SARIMA</h3><p>Time-series forecasting of monthly U.S. retail sales.</p></div></article>
-        <article class="project-card" data-project="project6" tabindex="0"><span class="project-number">6</span><div><h3>Netflix Top-10 Content Trend Analysis</h3><p>Exploration of content popularity, categories, and viewing trends.</p></div></article>
-        <article class="project-card" data-project="project7" tabindex="0"><span class="project-number">7</span><div><h3>Dodgers Attendance and Promotion Analysis</h3><p>Investigation of promotional factors associated with game attendance.</p></div></article>
-        <article class="project-card" data-project="project8" tabindex="0"><span class="project-number">8</span><div><h3>Generative AI Invoice Information Extraction</h3><p>Structured extraction of invoice data from PDF documents.</p></div></article>
-        <article class="project-card" data-project="project9" tabindex="0"><span class="project-number">9</span><div><h3>RAG-Based Question-Answering Assistant</h3><p>Document-grounded answers using retrieval-augmented generation.</p></div></article>
-        <article class="project-card" data-project="project10" tabindex="0"><span class="project-number">10</span><div><h3>Generative AI Observability Using MLflow</h3><p>Tracking model configuration, latency, tokens, prompts, and responses.</p></div></article>
+        <article class="project-card" data-project="project1" tabindex="0"><span class="project-number">1</span><div><h3>Telecom Customer Churn Prediction</h3><p>Machine-learning analysis to identify telecommunications customers who may discontinue service.</p></div></article>
+        <article class="project-card" data-project="project2" tabindex="0"><span class="project-number">2</span><div><h3>U.S. Childcare Affordability Analysis</h3><p>Analysis of childcare costs, incomes, geographic disparities, provider types, and age groups.</p></div></article>
+        <article class="project-card" data-project="project3" tabindex="0"><span class="project-number">3</span><div><h3>AI-Based Residential Energy Efficiency Optimization</h3><p>Generative AI analysis of residential energy data to produce tailored efficiency recommendations.</p></div></article>
+        <article class="project-card" data-project="project4" tabindex="0"><span class="project-number">4</span><div><h3>Netflix Top 10 Content &amp; Viewership Analysis</h3><p>Analysis of Netflix Top 10 data to understand content popularity and audience behavior.</p></div></article>
+        <article class="project-card" data-project="project5" tabindex="0"><span class="project-number">5</span><div><h3>U.S. Retail Sales Forecasting Using Time-Series Analysis</h3><p>Time-series analysis of historical U.S. retail sales trends, seasonality, and forecasting.</p></div></article>
+        <article class="project-card" data-project="project6" tabindex="0"><span class="project-number">6</span><div><h3>Hybrid Movie Recommendation System Using MovieLens</h3><p>A personalized movie recommender using ratings, attributes, and similarity analysis.</p></div></article>
+        <article class="project-card" data-project="project7" tabindex="0"><span class="project-number">7</span><div><h3>TSA Passenger Complaint &amp; Airport Operations Analysis</h3><p>Analysis of TSA passenger complaint trends over time and across locations.</p></div></article>
+        <article class="project-card" data-project="project8" tabindex="0"><span class="project-number">8</span><div><h3>Predicting Road Accident Severity Using Machine Learning</h3><p>Machine-learning analysis of accident-related features and patterns associated with severity.</p></div></article>
+        <article class="project-card" data-project="project9" tabindex="0"><span class="project-number">9</span><div><h3>MNIST Image Classification Using CNN</h3><p>Deep-learning classification of handwritten digits from zero through nine using a CNN.</p></div></article>
+        <article class="project-card" data-project="project10" tabindex="0"><span class="project-number">10</span><div><h3>Course Project – TBD</h3><p>Final portfolio project to be selected and added.</p></div></article>
       </div>
     </section>
 
@@ -343,74 +343,59 @@
       <h2>Project Details</h2>
 
       <article class="detail-card" id="project1">
-        <h3>1. AI-Based System for Residential Energy Efficiency Optimization</h3>
-        <p><span class="label">Project overview:</span> Developed a generative AI system that analyzes household energy conditions and produces practical energy-saving recommendations. The work used the Appliances Energy Prediction dataset and transformed energy, temperature, humidity, and weather measurements into structured prompt-response examples.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, GPT-2, Hugging Face Transformers, LoRA/PEFT, PyTorch, and Streamlit.</p>
-        <ul>
-          <li>Generated household-specific energy-efficiency suggestions.</li>
-          <li>Evaluated response format, relevance, and hallucination risk.</li>
-          <li>Designed the solution for an interactive Streamlit interface.</li>
-        </ul>
-        <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Residential_Energy_Efficiency" target="_blank" rel="noopener noreferrer">View Source Code</a>
-          <a class="back-link" href="#project-list">← Return to Project List</a>
-        </div>
-      </article>
-
-      <article class="detail-card" id="project2">
-        <h3>2. Telecom Customer Churn Prediction</h3>
-        <p><span class="label">Project overview:</span> Built and compared machine-learning models using a telecom dataset containing 7,043 customer records and 21 original columns. Data preparation included missing-value handling, categorical encoding, scaling, feature engineering, stratified splitting, and SMOTE on training data only.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, Scikit-learn, XGBoost, imbalanced-learn, Matplotlib, and Seaborn.</p>
-        <ul>
-          <li>Compared Logistic Regression, Random Forest, and XGBoost.</li>
-          <li>Logistic Regression achieved ROC-AUC of approximately 0.837 and recall of approximately 0.738.</li>
-          <li>Random Forest achieved the highest accuracy at approximately 0.766.</li>
-        </ul>
+        <h3>1. Telecom Customer Churn Prediction</h3>
+        <p><span class="label">Project overview:</span> Data on telecommunications customers is analyzed to identify which customers may discontinue service. Customer demographics, accounts, services, contracts, and billing features are analyzed using various machine-learning classification techniques.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, NumPy, Scikit-learn, XGBoost, imbalanced-learn, and Matplotlib.</p>
+        <p><span class="label">Key skills:</span> Data preprocessing, feature engineering, classification, class imbalance techniques, and prediction modeling.</p>
+        <p><span class="label">Outcome:</span> Insights into customer churn have been provided to help businesses better understand customer behavior and retention programs.</p>
         <div class="project-actions">
           <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Telecom_Churn_Prediction" target="_blank" rel="noopener noreferrer">View Source Code</a>
           <a class="back-link" href="#project-list">← Return to Project List</a>
         </div>
       </article>
 
-      <article class="detail-card" id="project3">
-        <h3>3. Childcare Cost Affordability Analysis</h3>
-        <p><span class="label">Project overview:</span> Analyzed the National Database of Childcare Prices to understand how childcare costs differ across states, counties, provider types, and age groups. The project focused on presenting affordability patterns through clear visual analysis.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, Matplotlib, Seaborn, and data visualization tools.</p>
-        <ul>
-          <li>Compared center-based and home-based childcare costs.</li>
-          <li>Examined geographic differences and affordability trends.</li>
-          <li>Translated complex pricing data into understandable visuals.</li>
-        </ul>
+      <article class="detail-card" id="project2">
+        <h3>2. U.S. Childcare Affordability Analysis</h3>
+        <p><span class="label">Project overview:</span> The project analyzes childcare affordability in the United States by examining childcare costs, incomes, geographic disparities, provider types, and age groups. Visualizations are used to explain differences in childcare affordability and to communicate socioeconomic data.</p>
+        <p><span class="label">Tools and technologies:</span> Tableau, Data Visualization, PowerPoint, and Data Analytics.</p>
+        <p><span class="label">Key skills:</span> Exploratory data analysis, dashboard creation, trends analysis, geographic comparison, and data visualization.</p>
+        <p><span class="label">Outcome:</span> Helped provide greater insight into childcare affordability.</p>
         <div class="project-actions">
           <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Childcare_Cost_Analysis" target="_blank" rel="noopener noreferrer">View Source Code</a>
           <a class="back-link" href="#project-list">← Return to Project List</a>
         </div>
       </article>
 
-      <article class="detail-card" id="project4">
-        <h3>4. MovieLens Hybrid Recommendation System</h3>
-        <p><span class="label">Project overview:</span> Created a hybrid recommendation system using the MovieLens small dataset. The solution combined collaborative filtering with content-based information to generate personalized movie recommendations.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, NumPy, Scikit-learn, and recommendation-system techniques.</p>
-        <ul>
-          <li>Prepared user-rating and movie-metadata information.</li>
-          <li>Combined complementary recommendation approaches.</li>
-          <li>Generated ranked movie suggestions for users.</li>
-        </ul>
+      <article class="detail-card" id="project3">
+        <h3>3. AI-Based Residential Energy Efficiency Optimization</h3>
+        <p><span class="label">Project overview:</span> This project examines the role of generative AI in analyzing residential energy and environmental data and in making structured suggestions for energy efficiency. Household energy usage data are converted into samples that enable an AI model to provide tailored advice for each household.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Hugging Face Transformers, GPT-2, LoRA, PEFT, PyTorch, and Pandas.</p>
+        <p><span class="label">Key skills:</span> Generative AI, fine-tuning models, prompt engineering, data preparation, model evaluation, and responsible AI.</p>
+        <p><span class="label">Outcome:</span> Successfully demonstrated the ability of AI to generate practical recommendations from residential energy data.</p>
         <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/MovieLens_Recommendation" target="_blank" rel="noopener noreferrer">View Source Code</a>
+          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Residential_Energy_Efficiency" target="_blank" rel="noopener noreferrer">View Source Code</a>
+          <a class="back-link" href="#project-list">← Return to Project List</a>
+        </div>
+      </article>
+
+      <article class="detail-card" id="project4">
+        <h3>4. Netflix Top 10 Content &amp; Viewership Analysis</h3>
+        <p><span class="label">Project overview:</span> This project involves analyzing Netflix Top 10 data to understand trends in content popularity and audience behavior. The analysis includes popular content, the staying power of content within the Top 10 list, differences by country, early performance, and the correlation between duration and views.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, Jupyter Notebook, Matplotlib, Data Visualization, and PowerPoint.</p>
+        <p><span class="label">Key skills:</span> Data cleaning, exploratory analysis, trend analysis, data visualization, audience analysis, and visual storytelling.</p>
+        <p><span class="label">Outcome:</span> Insights from the data will help stakeholders make sense of audience preferences and content performance.</p>
+        <div class="project-actions">
+          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Netflix_Trend_Analysis" target="_blank" rel="noopener noreferrer">View Source Code</a>
           <a class="back-link" href="#project-list">← Return to Project List</a>
         </div>
       </article>
 
       <article class="detail-card" id="project5">
-        <h3>5. U.S. Retail Sales Forecasting Using SARIMA</h3>
-        <p><span class="label">Project overview:</span> Developed a SARIMA time-series model to forecast monthly U.S. retail sales. Historical data from January 1992 through June 2020 was used for training, while July 2020 through June 2021 was reserved for testing.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, Statsmodels, Matplotlib, and time-series analysis.</p>
-        <ul>
-          <li>Analyzed trend and seasonal behavior.</li>
-          <li>Produced forecasts with confidence intervals.</li>
-          <li>Achieved a test RMSE of approximately 59,819.</li>
-        </ul>
+        <h3>5. U.S. Retail Sales Forecasting Using Time-Series Analysis</h3>
+        <p><span class="label">Project overview:</span> This project performs a time-series analysis on historical U.S. retail sales data to gain insight into trends, seasonality, and dynamics. Historical behavior is studied using time-series analysis and applied to future forecasting.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, NumPy, Statsmodels, Matplotlib, and Jupyter Notebook.</p>
+        <p><span class="label">Key skills:</span> Time-series analysis, forecasting, trend analysis, seasonality analysis, data visualization, and model evaluation.</p>
+        <p><span class="label">Outcome:</span> Insights gained from historical U.S. retail sales behavior and the application of trends toward future forecasting.</p>
         <div class="project-actions">
           <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Retail_Sales_Forecasting" target="_blank" rel="noopener noreferrer">View Source Code</a>
           <a class="back-link" href="#project-list">← Return to Project List</a>
@@ -418,76 +403,61 @@
       </article>
 
       <article class="detail-card" id="project6">
-        <h3>6. Netflix Top-10 Content Trend Analysis</h3>
-        <p><span class="label">Project overview:</span> Explored Netflix Top-10 data to identify patterns in content type, popularity, viewing performance, and changes over time.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, Matplotlib, Seaborn, and exploratory data analysis.</p>
-        <ul>
-          <li>Compared the performance of movies and television content.</li>
-          <li>Identified popular titles and recurring patterns.</li>
-          <li>Created visual summaries for communicating key findings.</li>
-        </ul>
+        <h3>6. Hybrid Movie Recommendation System Using MovieLens</h3>
+        <p><span class="label">Project overview:</span> This project involves creating a movie recommendation system that allows the user to choose a preferred movie and receive recommendations for other movies they might like. The recommender uses movie ratings and other attributes to determine similarities.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, NumPy, Scikit-learn, TF-IDF, and Cosine Similarity.</p>
+        <p><span class="label">Key skills:</span> Recommender systems, collaborative filtering, content-based filtering, similarity analysis, recommendation ranking, and data cleaning.</p>
+        <p><span class="label">Outcome:</span> Developed a personalized recommendation system that assists users in finding movies through similarities.</p>
         <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Netflix_Trend_Analysis" target="_blank" rel="noopener noreferrer">View Source Code</a>
+          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/MovieLens_Recommendation" target="_blank" rel="noopener noreferrer">View Source Code</a>
           <a class="back-link" href="#project-list">← Return to Project List</a>
         </div>
       </article>
 
       <article class="detail-card" id="project7">
-        <h3>7. Dodgers Attendance and Promotion Analysis</h3>
-        <p><span class="label">Project overview:</span> Investigated the relationship between Los Angeles Dodgers promotions and game attendance, including the effect of bobblehead giveaways.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, Matplotlib, Seaborn, and statistical analysis.</p>
-        <ul>
-          <li>Compared attendance across promotional and non-promotional games.</li>
-          <li>Bobblehead games averaged approximately 53,144 attendees, compared with approximately 39,138 without bobbleheads.</li>
-          <li>Presented actionable insights for event-promotion planning.</li>
-        </ul>
+        <h3>7. TSA Passenger Complaint &amp; Airport Operations Analysis</h3>
+        <p><span class="label">Project overview:</span> The main objective of this project is to analyze passenger complaint data for the TSA and identify trends in complaints over time and across locations. Data visualization methods are applied in the process.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, Jupyter Notebook, Matplotlib, Data Visualization, and PowerPoint.</p>
+        <p><span class="label">Key skills:</span> Operational analytics, data cleansing, trend analysis, geographic analysis, data visualization, and storytelling through visualization.</p>
+        <p><span class="label">Outcome:</span> Identified passenger complaint patterns to help determine recurring passenger concerns.</p>
         <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Dodgers_Attendance_Analysis" target="_blank" rel="noopener noreferrer">View Source Code</a>
+          <span class="label">Source code:</span> To be added
           <a class="back-link" href="#project-list">← Return to Project List</a>
         </div>
       </article>
 
       <article class="detail-card" id="project8">
-        <h3>8. Generative AI Invoice Information Extraction</h3>
-        <p><span class="label">Project overview:</span> Built an application that reads invoice PDFs and uses a generative AI model to extract important fields into structured JSON.</p>
-        <p><span class="label">Tools and technologies:</span> Python, PyMuPDF, OpenAI API, GPT-4.1-mini, JSON, and prompt engineering.</p>
-        <ul>
-          <li>Extracted invoice number, vendor, bill-to information, line items, and totals.</li>
-          <li>Returned consistent machine-readable JSON.</li>
-          <li>Demonstrated how document processing can reduce manual entry.</li>
-        </ul>
+        <h3>8. Predicting Road Accident Severity Using Machine Learning</h3>
+        <p><span class="label">Project overview:</span> In this project, road accident data will be analyzed to identify patterns related to accident severity. The project explores available accident-related features and predicts patterns that lead to more severe outcomes.</p>
+        <p><span class="label">Tools and technologies:</span> Python, Pandas, NumPy, Scikit-learn, and Matplotlib.</p>
+        <p><span class="label">Key skills:</span> Exploratory data analysis, data preprocessing, feature engineering, classification, predictive modeling, and model evaluation.</p>
+        <p><span class="label">Outcome:</span> Identify patterns associated with accident severity and provide insights to better understand road safety risks.</p>
         <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Invoice_Information_Extraction" target="_blank" rel="noopener noreferrer">View Source Code</a>
+          <span class="label">Source code:</span> To be added
           <a class="back-link" href="#project-list">← Return to Project List</a>
         </div>
       </article>
 
       <article class="detail-card" id="project9">
-        <h3>9. RAG-Based Question-Answering Assistant</h3>
-        <p><span class="label">Project overview:</span> Created a retrieval-augmented generation assistant that retrieves relevant document sections before generating an answer. This approach improves grounding and reduces unsupported responses.</p>
-        <p><span class="label">Tools and technologies:</span> Python, LangChain, Chroma, OpenAI embeddings, document loaders, and vector search.</p>
-        <ul>
-          <li>Loaded, divided, embedded, and indexed source documents.</li>
-          <li>Retrieved relevant context for each question.</li>
-          <li>Kept answers grounded in the available source material.</li>
-        </ul>
+        <h3>9. MNIST Image Classification Using CNN</h3>
+        <p><span class="label">Project overview:</span> A convolutional neural network (CNN) is used to classify handwritten digits from images. The neural network learns patterns in handwritten digits and classifies them as numbers from zero to nine.</p>
+        <p><span class="label">Tools and technologies:</span> Python, TensorFlow, Keras, NumPy, Matplotlib, and Jupyter Notebook.</p>
+        <p><span class="label">Key skills:</span> Deep learning, convolutional neural networks, image recognition, data preprocessing, model training, model evaluation, and data visualization.</p>
+        <p><span class="label">Outcome:</span> Illustrated how deep learning may be used for image recognition by building a model that can recognize and classify handwritten digits.</p>
         <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/RAG_Question_Answering" target="_blank" rel="noopener noreferrer">View Source Code</a>
+          <span class="label">Source code:</span> To be added
           <a class="back-link" href="#project-list">← Return to Project List</a>
         </div>
       </article>
 
       <article class="detail-card" id="project10">
-        <h3>10. Generative AI Observability Using MLflow</h3>
-        <p><span class="label">Project overview:</span> Implemented an MLflow-based workflow for observing a generative AI application. The project tracked model settings, token usage, response time, prompts, outputs, and execution details.</p>
-        <p><span class="label">Tools and technologies:</span> Python, MLflow, OpenAI API, GPT-3.5-turbo, and tiktoken.</p>
-        <ul>
-          <li>Logged model parameters and generated responses.</li>
-          <li>Measured token usage and response latency.</li>
-          <li>Improved experiment comparison and troubleshooting.</li>
-        </ul>
+        <h3>10. Course Project – TBD</h3>
+        <p><span class="label">Project overview:</span> This portfolio project has not yet been selected. The project details will be added after the final course project is confirmed.</p>
+        <p><span class="label">Tools and technologies:</span> To be determined.</p>
+        <p><span class="label">Key skills:</span> To be determined.</p>
+        <p><span class="label">Outcome:</span> To be determined.</p>
         <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/GenAI_MLflow_Observability" target="_blank" rel="noopener noreferrer">View Source Code</a>
+          <span class="label">Source code:</span> To be added
           <a class="back-link" href="#project-list">← Return to Project List</a>
         </div>
       </article>
