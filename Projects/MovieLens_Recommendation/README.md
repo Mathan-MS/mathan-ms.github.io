@@ -2,148 +2,111 @@
 
 ## Project Overview
 
-This project builds a hybrid movie recommender system using the MovieLens Small dataset. The system recommends ten movies based on a movie entered by the user.
+This project builds a hybrid movie recommender system using the MovieLens Small dataset.
 
-The recommendation engine combines item-based collaborative filtering with tag-based content similarity. Collaborative filtering captures similarities in user rating behavior, while content-based filtering uses movie tags to identify descriptive similarities between movies.
-
-Fuzzy title matching is also included so the system can recognize close matches when a user does not enter the exact movie title.
+The system combines item-based collaborative filtering with tag-based content similarity to recommend ten movies based on a movie entered by the user.
 
 ## Business Problem
 
-Streaming and entertainment platforms contain large catalogs that can make it difficult for users to decide what to watch. Recommendation systems help reduce this information overload by identifying content that is likely to match a user's interests.
+Streaming and entertainment platforms contain large catalogs that can make it difficult for users to decide what to watch.
 
-This project explores how movie ratings and descriptive tags can be combined to generate relevant movie recommendations.
+This project is aimed at accomplishing the following goals:
+
+- Use movie ratings to identify similar viewing patterns.
+- Use descriptive movie tags to identify content similarity.
+- Combine collaborative and content-based filtering.
+- Support fuzzy title matching for easier user input.
+- Return ten related movie recommendations.
 
 ## Dataset
 
-The project uses the MovieLens Small dataset from GroupLens.
+The project uses the MovieLens Small dataset.
 
 The following files are used:
 
-- `movies.csv` – movie titles and genres
-- `ratings.csv` – user ratings for movies
-- `tags.csv` – user-provided descriptive movie tags
+- `movies.csv`
+- `ratings.csv`
+- `tags.csv`
 
 The common `movieId` field allows the three datasets to be combined.
 
-## Methods
-
-The project follows these steps:
-
-1. Load the MovieLens datasets
-2. Clean movie titles
-3. Extract movie release years
-4. Aggregate movie tags
-5. Calculate average movie ratings
-6. Create a user-movie rating matrix
-7. Calculate collaborative movie similarity using cosine similarity
-8. Convert tags into TF-IDF features
-9. Calculate tag-based content similarity
-10. Combine the two similarity matrices into a hybrid recommendation model
-11. Apply fuzzy title matching
-12. Return the top ten recommended movies
-
-## Recommendation Approach
-
-The hybrid similarity model uses:
-
-- **70% collaborative filtering similarity**
-- **30% tag-based content similarity**
-
-Collaborative filtering compares how users rate different movies, while content-based filtering compares descriptive movie tags.
-
-The combined approach allows the recommender to use both user behavior and movie metadata.
-
-## Tools and Technologies
+## Tools & Technologies
 
 - Python
 - Jupyter Notebook
-- pandas
+- Pandas
 - NumPy
-- scikit-learn
+- Scikit-learn
 - TF-IDF
-- Cosine similarity
+- Cosine Similarity
 - fuzzywuzzy
 - tabulate
 
-## Repository Structure
+## Project Workflow
 
-```text
-Movie_Recommender_System/
-│
-├── README.md
-│
-├── data/
-│   ├── movies.csv
-│   ├── ratings.csv
-│   └── tags.csv
-│
-└── notebooks/
-    └── Movie_Recommender_System.ipynb
-```
+The project follows these main steps:
 
-## How to Run the Project
+1. **Data Loading**
+   - Loaded movie, rating, and tag data.
+
+2. **Movie Title Preparation**
+   - Cleaned movie titles.
+   - Extracted release years.
+
+3. **Tag Processing**
+   - Aggregated user-provided tags at the movie level.
+
+4. **Rating Analysis**
+   - Calculated average movie ratings.
+   - Created a user-movie rating matrix.
+
+5. **Collaborative Filtering**
+   - Calculated item-based cosine similarity using rating behavior.
+
+6. **Content-Based Filtering**
+   - Converted movie tags into TF-IDF features.
+   - Calculated tag-based cosine similarity.
+
+7. **Hybrid Recommendation Model**
+   - Combined 70% collaborative similarity with 30% tag-based similarity.
+
+8. **Fuzzy Matching and Recommendation**
+   - Matched approximate movie titles.
+   - Returned the top ten recommended movies.
+
+## Recommendation Approach
+
+The hybrid recommendation model uses:
+
+- 70% collaborative filtering similarity
+- 30% tag-based content similarity
+
+This allows the recommender to use both user behavior and movie characteristics.
+
+## Key Findings
+
+The project demonstrates that rating behavior and movie metadata can be combined to generate relevant movie recommendations.
+
+The hybrid approach provides a more flexible recommendation process than relying on either ratings or tags alone.
+
+## Outcome
+
+The project creates an interactive movie recommender that accepts a movie title and returns ten related movies.
+
+The final system demonstrates collaborative filtering, content-based filtering, text vectorization, similarity modeling, and fuzzy matching.
+
+## Installation / Running the Project
 
 1. Clone the repository.
 
-2. Place the MovieLens data files inside the `data/` folder:
+2. Place the MovieLens files in the `data/` folder.
 
-```text
-data/movies.csv
-data/ratings.csv
-data/tags.csv
-```
-
-3. Install the required Python packages:
+3. Install the required packages:
 
 ```bash
 pip install pandas numpy scikit-learn fuzzywuzzy python-Levenshtein tabulate
 ```
 
-4. Open:
+4. Open and run:
 
-```text
-notebooks/Movie_Recommender_System.ipynb
-```
-
-5. Run the notebook cells in order.
-
-6. Use the interactive recommender or call:
-
-```python
-recommend_movies("Toy Story", top_n=10)
-```
-
-## Key Skills Demonstrated
-
-- Recommender systems
-- Collaborative filtering
-- Content-based filtering
-- Hybrid recommendation modeling
-- Cosine similarity
-- TF-IDF text vectorization
-- Fuzzy string matching
-- Data cleaning and preprocessing
-- Python and pandas
-- Interactive application development
-
-## Outcome
-
-The project creates an interactive hybrid recommender that accepts a movie title and returns ten related movies. By combining rating-based and tag-based similarity, the system provides recommendations using both user behavior and movie characteristics.
-
-## Limitations
-
-The system is based on the MovieLens Small dataset and therefore represents only the users, movies, ratings, and tags available in that dataset. Movies with limited ratings or tag information may produce weaker recommendations.
-
-The 70/30 weighting between collaborative and content similarity is manually selected and has not been optimized through formal validation.
-
-## Future Improvements
-
-Potential enhancements include:
-
-- Tuning the collaborative/content similarity weights
-- Adding genre-based features
-- Incorporating user-specific recommendations
-- Evaluating recommendation quality with ranking metrics
-- Adding popularity and rating thresholds
-- Building a web-based recommendation interface
+`notebooks/Movie_Recommender_System.ipynb`

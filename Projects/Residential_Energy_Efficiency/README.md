@@ -2,19 +2,22 @@
 
 ## Project Overview
 
-This project develops an AI-based residential energy-efficiency advisor using household energy and environmental sensor data. The workflow transforms structured energy data into prompt-response examples and fine-tunes a GPT-2 language model with LoRA so the model can generate residential energy-efficiency assessments, recommendations, and limitations.
+This project develops an AI-based residential energy-efficiency advisor using household energy and environmental sensor data.
 
-The project includes data preparation, prompt construction, model training, evaluation, hallucination-risk testing, model saving, and reload verification.
+The workflow transforms structured energy data into prompt-response examples and fine-tunes a GPT-2 language model with LoRA so the model can generate residential energy-efficiency assessments, recommendations, and limitations.
 
 ## Business Problem
 
-Residential energy consumption can be difficult to interpret because household energy use is influenced by multiple environmental and behavioral factors. The goal of this project is to explore whether a lightweight fine-tuned language model can convert household energy data into structured, understandable energy-efficiency guidance.
+Residential energy consumption can be difficult to interpret because household energy use is influenced by multiple environmental and behavioral factors.
 
-The model is designed to generate responses that include:
+This project is aimed at accomplishing the following goals:
 
-- An assessment of the household energy situation
-- Practical energy-efficiency recommendations
-- Limitations or cautions associated with the recommendation
+- Convert household energy and environmental data into structured prompts.
+- Fine-tune GPT-2 using LoRA.
+- Generate energy-efficiency assessments and recommendations.
+- Compare the fine-tuned model with the original GPT-2 baseline.
+- Evaluate response structure and hallucination risk.
+- Save and reload the trained LoRA adapter.
 
 ## Dataset
 
@@ -22,43 +25,13 @@ The project uses:
 
 `KAG_energydata_complete.csv`
 
-The dataset contains household appliance energy consumption along with temperature and humidity measurements collected from multiple rooms and environmental sensors.
+The dataset contains household appliance energy consumption together with temperature and humidity measurements collected from multiple rooms and environmental sensors.
 
-The notebook reads the source data from the project's `data/` folder and transforms the records into structured text examples for model training and evaluation.
-
-## Methods
-
-The project follows these main steps:
-
-1. **Data Preparation**  
-   Load and prepare household energy and environmental sensor data for analysis.
-
-2. **Feature Categorization**  
-   Convert selected numeric energy and environmental measurements into meaningful descriptive categories that can be incorporated into natural-language prompts.
-
-3. **Prompt and Response Generation**  
-   Build structured examples that describe household conditions and pair them with energy-efficiency assessments and recommendations.
-
-4. **Model Fine-Tuning**  
-   Fine-tune GPT-2 using LoRA to create a lightweight domain-adapted energy-efficiency advisor.
-
-5. **Model Evaluation**  
-   Evaluate training and validation performance and compare the fine-tuned model with the original GPT-2 baseline.
-
-6. **Format Compliance Testing**  
-   Check whether generated responses follow the expected assessment, recommendation, and limitation structure.
-
-7. **Hallucination-Risk Testing**  
-   Test the model on selected prompts to identify unsupported, exaggerated, or unreliable recommendations.
-
-8. **Model Saving and Reload Verification**  
-   Save the trained LoRA adapter and verify that it can be reloaded for future inference.
-
-## Tools and Technologies
+## Tools & Technologies
 
 - Python
 - Jupyter Notebook
-- pandas
+- Pandas
 - NumPy
 - Matplotlib
 - PyTorch
@@ -66,113 +39,73 @@ The project follows these main steps:
 - PEFT / LoRA
 - GPT-2
 
-## Project Outputs
+## Project Workflow
 
-The notebook saves project outputs into dedicated folders.
+The project follows these main steps:
 
-### Figures
+1. **Data Preparation**
+   - Loaded household energy and environmental sensor data.
 
-`figures/`
+2. **Feature Categorization**
+   - Converted selected numeric measurements into descriptive categories.
 
-- `training_validation_loss.png`
+3. **Prompt and Response Generation**
+   - Built structured training examples with assessments, recommendations, and limitations.
 
-### Results
+4. **Baseline Evaluation**
+   - Evaluated the original GPT-2 model before fine-tuning.
 
-`results/`
+5. **LoRA Fine-Tuning**
+   - Fine-tuned GPT-2 using parameter-efficient LoRA adapters.
 
-- `training_validation_metrics.csv`
-- `model_response_comparison.csv`
-- `format_compliance_summary.csv`
-- `hallucination_risk_comparison.csv`
+6. **Model Evaluation**
+   - Compared training and validation performance.
+   - Compared baseline and fine-tuned responses.
 
-### Models
+7. **Format Compliance Testing**
+   - Checked whether responses followed the expected structure.
 
-`models/`
+8. **Hallucination-Risk Testing**
+   - Tested the model for unsupported or exaggerated claims.
 
-- Training checkpoints
-- Final GPT-2 LoRA adapter
+9. **Model Saving and Reload Verification**
+   - Saved and reloaded the trained LoRA adapter.
 
-## Repository Structure
+## Model Evaluation
 
-```text
-Energy_Efficiency_Optimization/
-│
-├── README.md
-│
-├── data/
-│   └── KAG_energydata_complete.csv
-│
-├── figures/
-│   └── training_validation_loss.png
-│
-├── results/
-│   ├── training_validation_metrics.csv
-│   ├── model_response_comparison.csv
-│   ├── format_compliance_summary.csv
-│   └── hallucination_risk_comparison.csv
-│
-├── models/
-│   ├── checkpoints/
-│   └── gpt2_energy_lora_adapter/
-│
-└── notebooks/
-    └── Energy_Efficiency_Optimization.ipynb
-```
+The model was evaluated using:
 
-## How to Run the Project
+- Training Loss
+- Validation Loss
+- Baseline vs Fine-Tuned Response Comparison
+- Format Compliance
+- Hallucination-Risk Testing
+- Reload Verification
+
+## Key Findings
+
+The project demonstrates that GPT-2 can be adapted to a specialized residential energy-efficiency use case using LoRA.
+
+The fine-tuned workflow provides structured energy-efficiency guidance while also allowing response format and hallucination risk to be reviewed.
+
+## Outcome
+
+This project demonstrates a complete generative-AI workflow for residential energy-efficiency guidance.
+
+The final workflow includes data preparation, prompt engineering, GPT-2 LoRA fine-tuning, model evaluation, hallucination-risk testing, and model persistence.
+
+## Installation / Running the Project
 
 1. Clone the repository.
 
-2. Place the dataset in the `data/` folder:
+2. Place the dataset in the `data/` folder.
 
-```text
-data/KAG_energydata_complete.csv
-```
-
-3. Install the required Python packages:
+3. Install the required packages:
 
 ```bash
 pip install pandas numpy matplotlib torch transformers peft datasets accelerate
 ```
 
-4. Open the notebook:
+4. Open and run:
 
-```text
-notebooks/Energy_Efficiency_Optimization.ipynb
-```
-
-5. Run the notebook cells in order.
-
-The notebook automatically creates the required `figures`, `results`, and `models` folders if they do not already exist.
-
-## Key Skills Demonstrated
-
-- Data preparation and transformation
-- Feature categorization
-- Prompt engineering
-- Generative AI
-- Large language model fine-tuning
-- LoRA / parameter-efficient fine-tuning
-- Model evaluation
-- Hallucination-risk assessment
-- Model persistence and reload testing
-- Python-based machine learning workflow
-
-## Outcome
-
-The project demonstrates how a compact language model can be adapted to a specialized energy-efficiency use case using structured household energy data. The final workflow produces a reusable fine-tuned model, evaluation results, and supporting visualizations while also examining response quality and hallucination risk.
-
-## Limitations
-
-The model is intended as a demonstration of AI-assisted energy-efficiency guidance. Its recommendations depend on the quality and coverage of the training examples and should not be treated as a substitute for a professional home energy audit or engineering assessment.
-
-## Future Improvements
-
-Potential future enhancements include:
-
-- Expanding the training dataset with a wider range of household conditions
-- Testing additional language models
-- Improving recommendation specificity
-- Adding quantitative energy-saving estimates
-- Expanding hallucination and safety evaluation
-- Developing an interactive user interface for household energy recommendations
+`notebooks/Energy_Efficiency_Optimization.ipynb`

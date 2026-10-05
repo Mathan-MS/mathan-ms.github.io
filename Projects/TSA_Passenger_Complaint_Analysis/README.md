@@ -2,26 +2,26 @@
 
 ## Project Overview
 
-This project analyzes Transportation Security Administration (TSA) complaint data across U.S. airports. The analysis examines complaint activity over time, complaint subcategories, monthly complaint distributions at major airports, geographic complaint patterns, complaint-category rankings, and airport distribution by region.
+This project analyzes Transportation Security Administration (TSA) complaint data across U.S. airports.
 
-Four TSA-related datasets are used to create six visualizations that summarize important complaint and airport patterns.
+The analysis examines complaint activity over time, complaint subcategories, complaint distributions at major airports, geographic complaint patterns, complaint-category rankings, and airport distribution by region.
 
 ## Business Problem
 
-Understanding where and when passenger complaints occur can help identify areas of concern within airport security operations and passenger service.
+Understanding when and where passenger complaints occur can help identify areas of concern within airport security operations and passenger service.
 
-This project explores several questions:
+This project is aimed at accomplishing the following goals:
 
-- How do TSA complaint volumes change by month and year?
-- Which complaint subcategories contribute the most complaints?
-- Which major airports show the highest complaint levels and variability?
-- Where are TSA complaints geographically concentrated?
-- Which complaint categories occur most frequently?
-- How are airports distributed across regions?
+- Analyze complaint volume by month and year.
+- Identify major complaint subcategories.
+- Compare complaint distributions across major airports.
+- Examine the geographic distribution of complaints.
+- Rank major complaint categories.
+- Compare airport distribution across regions.
 
-## Datasets
+## Dataset
 
-The project uses four CSV files:
+The project uses four TSA-related CSV files:
 
 - `complaints-by-airport.csv`
 - `complaints-by-category.csv`
@@ -30,26 +30,48 @@ The project uses four CSV files:
 
 The complaint datasets contain complaint counts by airport, category, and subcategory. The airport reference dataset provides airport codes, geographic coordinates, and regional information.
 
-## Methods
+## Tools & Technologies
+
+- Python
+- Jupyter Notebook
+- Pandas
+- Matplotlib
+- Seaborn
+
+## Project Workflow
 
 The project follows these main steps:
 
-1. Load the four TSA-related datasets
-2. Standardize column names
-3. Convert date fields
-4. Create year and month variables
-5. Remove missing or blank airport codes
-6. Standardize airport-code formatting
-7. Replace missing complaint counts with zero
-8. Aggregate complaint activity by time period
-9. Analyze major complaint subcategories and categories
-10. Compare complaint distributions across major airports
-11. Merge complaint data with airport-location data
-12. Visualize airport distribution by region
+1. **Data Loading**
+   - Loaded the complaint and airport reference datasets.
+
+2. **Data Cleaning and Preparation**
+   - Standardized column names.
+   - Converted date fields.
+   - Created year and month variables.
+   - Removed missing or blank airport codes.
+   - Standardized airport-code formatting.
+   - Replaced missing complaint counts with zero.
+
+3. **Time-Based Complaint Analysis**
+   - Analyzed complaint activity by month and year.
+
+4. **Complaint Subcategory Analysis**
+   - Identified the most common complaint subcategories and their trends.
+
+5. **Airport-Level Analysis**
+   - Compared complaint distributions across major airports.
+
+6. **Geographic Analysis**
+   - Combined complaint data with airport coordinates.
+
+7. **Complaint Category and Regional Analysis**
+   - Ranked complaint categories.
+   - Compared airport distribution across regions.
 
 ## Visualizations
 
-The notebook creates six visualizations:
+The analysis includes:
 
 - Complaint activity by month and year
 - Complaint trends by subcategory over time
@@ -58,97 +80,34 @@ The notebook creates six visualizations:
 - Complaint category ranking
 - Airport distribution by region
 
-All generated images are saved in the `figures/` folder.
+## Key Findings
 
-## Tools and Technologies
+The analysis identified several major patterns:
 
-- Python
-- Jupyter Notebook
-- pandas
-- Matplotlib
-- Seaborn
+- TSA complaints fell sharply in 2020 and increased strongly beginning in 2022.
+- Expedited Passenger Screening Program complaints account for a large share of complaint activity.
+- Major airports such as JFK and LAX show relatively high complaint levels and greater variability.
+- Complaint activity is concentrated around major metropolitan airports.
+- Airport distribution differs significantly across regions.
 
-## Repository Structure
+## Outcome
 
-```text
-TSA_Complaints_Analysis/
-│
-├── README.md
-│
-├── data/
-│   ├── complaints-by-airport.csv
-│   ├── complaints-by-category.csv
-│   ├── complaints-by-subcategory.csv
-│   └── iata-icao.csv
-│
-├── figures/
-│   ├── complaint_activity_by_month_and_year_heatmap.jpg
-│   ├── complaint_trends_by_subcategory_over_time.jpg
-│   ├── monthly_complaint_distribution_top_airports.jpg
-│   ├── spatial_distribution_of_tsa_complaints.jpg
-│   ├── complaint_category_ranking.jpg
-│   └── airport_distribution_by_region.jpg
-│
-└── notebooks/
-    └── TSA_Complaints_Analysis.ipynb
-```
+This project provides a structured view of TSA complaint patterns across time, complaint types, airports, and regions.
 
-## How to Run the Project
+The findings can support further analysis of airport service quality, passenger experience, and security operations.
+
+## Installation / Running the Project
 
 1. Clone the repository.
 
-2. Place all four CSV files in the `data/` folder.
+2. Place the four CSV files in the `data/` folder.
 
-3. Install the required Python packages:
+3. Install the required packages:
 
 ```bash
 pip install pandas matplotlib seaborn
 ```
 
-4. Open:
+4. Open and run:
 
-```text
-notebooks/TSA_Complaints_Analysis.ipynb
-```
-
-5. Run the notebook cells in order.
-
-The notebook automatically creates the `figures/` folder if it does not already exist.
-
-## Key Skills Demonstrated
-
-- Data cleaning and preparation
-- Data aggregation
-- Time-based analysis
-- Airport-level comparison
-- Geographic data integration
-- Exploratory data analysis
-- Data visualization
-- Heat maps
-- Stacked area charts
-- Box plots
-- Spatial scatter plots
-- Lollipop charts
-- Python and pandas
-- Matplotlib and Seaborn
-
-## Outcome
-
-The analysis identifies major patterns in TSA complaint activity, including a sharp decline in 2020 followed by strong growth beginning in 2022. Screening-related complaints represent a major portion of complaint activity, while major airports show differences in both complaint volume and variability.
-
-The project also highlights the geographic concentration of complaints at major metropolitan airports and differences in airport distribution across U.S. regions.
-
-## Limitations
-
-The analysis is descriptive and is based only on the complaint and airport-reference variables available in the supplied datasets. Higher complaint totals may reflect factors such as passenger volume, airport size, or travel disruptions, but those factors are not directly measured in the complaint data.
-
-## Future Improvements
-
-Potential enhancements include:
-
-- Normalizing complaint counts by airport passenger volume
-- Comparing complaint rates rather than raw counts
-- Adding airport traffic or delay data
-- Analyzing complaint trends by category and airport together
-- Creating interactive geographic maps
-- Building dashboards for airport-level complaint monitoring
+`notebooks/TSA_Complaints_Analysis.ipynb`
