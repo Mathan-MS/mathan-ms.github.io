@@ -136,4 +136,4 @@ jupyter notebook
 
 4. Open and run:
 
-`Telecom_Churn_Prediction.ipynb`
+`notebooks/Telecom_Churn_Prediction.ipynb`

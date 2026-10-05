@@ -111,4 +111,4 @@ jupyter notebook
 
 4. Open and run:
 
-`US_Childcare_Affordability_Analysis.ipynb`
+`notebooks/US_Childcare_Affordability_Analysis.ipynb`
