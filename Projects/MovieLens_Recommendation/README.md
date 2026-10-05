@@ -1,53 +1,149 @@
-# AI-Based System for Residential Energy Efficiency Optimization
+# Movie Recommender System
 
 ## Project Overview
 
-This project develops a generative AI system that analyzes residential energy conditions and provides practical recommendations for improving household energy efficiency.
+This project builds a hybrid movie recommender system using the MovieLens Small dataset. The system recommends ten movies based on a movie entered by the user.
 
-The system uses appliance energy consumption, indoor temperature, indoor humidity, outdoor temperature, and outdoor humidity to generate personalized energy-saving recommendations.
+The recommendation engine combines item-based collaborative filtering with tag-based content similarity. Collaborative filtering captures similarities in user rating behavior, while content-based filtering uses movie tags to identify descriptive similarities between movies.
 
-## Project Goals
+Fuzzy title matching is also included so the system can recognize close matches when a user does not enter the exact movie title.
 
-- Analyze household energy conditions.
-- Generate practical energy-saving recommendations.
-- Reduce unsupported or inaccurate AI recommendations.
-- Evaluate the model for response quality and hallucination risk.
-- Present the final system through an interactive application.
+## Business Problem
+
+Streaming and entertainment platforms contain large catalogs that can make it difficult for users to decide what to watch. Recommendation systems help reduce this information overload by identifying content that is likely to match a user's interests.
+
+This project explores how movie ratings and descriptive tags can be combined to generate relevant movie recommendations.
 
 ## Dataset
 
-The project uses the Appliances Energy Prediction dataset.
+The project uses the MovieLens Small dataset from GroupLens.
 
-The primary variables include:
+The following files are used:
 
-- Appliance energy consumption
-- Indoor temperature
-- Indoor humidity
-- Outdoor temperature
-- Outdoor humidity
+- `movies.csv` – movie titles and genres
+- `ratings.csv` – user ratings for movies
+- `tags.csv` – user-provided descriptive movie tags
+
+The common `movieId` field allows the three datasets to be combined.
+
+## Methods
+
+The project follows these steps:
+
+1. Load the MovieLens datasets
+2. Clean movie titles
+3. Extract movie release years
+4. Aggregate movie tags
+5. Calculate average movie ratings
+6. Create a user-movie rating matrix
+7. Calculate collaborative movie similarity using cosine similarity
+8. Convert tags into TF-IDF features
+9. Calculate tag-based content similarity
+10. Combine the two similarity matrices into a hybrid recommendation model
+11. Apply fuzzy title matching
+12. Return the top ten recommended movies
+
+## Recommendation Approach
+
+The hybrid similarity model uses:
+
+- **70% collaborative filtering similarity**
+- **30% tag-based content similarity**
+
+Collaborative filtering compares how users rate different movies, while content-based filtering compares descriptive movie tags.
+
+The combined approach allows the recommender to use both user behavior and movie metadata.
 
 ## Tools and Technologies
 
 - Python
-- Pandas
+- Jupyter Notebook
+- pandas
 - NumPy
-- PyTorch
-- GPT-2
-- Hugging Face Transformers
-- LoRA
-- PEFT
-- Streamlit
-- Matplotlib
-- Scikit-learn
+- scikit-learn
+- TF-IDF
+- Cosine similarity
+- fuzzywuzzy
+- tabulate
 
 ## Repository Structure
 
-- `notebooks/` – Jupyter notebooks
-- `scripts/` – Python source code
-- `data/` – Dataset information
-- `results/` – Training and evaluation results
-- `figures/` – Charts and application screenshots
+```text
+Movie_Recommender_System/
+│
+├── README.md
+│
+├── data/
+│   ├── movies.csv
+│   ├── ratings.csv
+│   └── tags.csv
+│
+└── notebooks/
+    └── Movie_Recommender_System.ipynb
+```
 
-## Responsible AI Considerations
+## How to Run the Project
 
-The model's recommendations must be treated as general energy-efficiency guidance. Responses are evaluated for hallucination risk, unsupported claims, unsafe recommendations, and inconsistent output.
+1. Clone the repository.
+
+2. Place the MovieLens data files inside the `data/` folder:
+
+```text
+data/movies.csv
+data/ratings.csv
+data/tags.csv
+```
+
+3. Install the required Python packages:
+
+```bash
+pip install pandas numpy scikit-learn fuzzywuzzy python-Levenshtein tabulate
+```
+
+4. Open:
+
+```text
+notebooks/Movie_Recommender_System.ipynb
+```
+
+5. Run the notebook cells in order.
+
+6. Use the interactive recommender or call:
+
+```python
+recommend_movies("Toy Story", top_n=10)
+```
+
+## Key Skills Demonstrated
+
+- Recommender systems
+- Collaborative filtering
+- Content-based filtering
+- Hybrid recommendation modeling
+- Cosine similarity
+- TF-IDF text vectorization
+- Fuzzy string matching
+- Data cleaning and preprocessing
+- Python and pandas
+- Interactive application development
+
+## Outcome
+
+The project creates an interactive hybrid recommender that accepts a movie title and returns ten related movies. By combining rating-based and tag-based similarity, the system provides recommendations using both user behavior and movie characteristics.
+
+## Limitations
+
+The system is based on the MovieLens Small dataset and therefore represents only the users, movies, ratings, and tags available in that dataset. Movies with limited ratings or tag information may produce weaker recommendations.
+
+The 70/30 weighting between collaborative and content similarity is manually selected and has not been optimized through formal validation.
+
+## Future Improvements
+
+Potential enhancements include:
+
+- Tuning the collaborative/content similarity weights
+- Adding genre-based features
+- Incorporating user-specific recommendations
+- Evaluating recommendation quality with ranking metrics
+- Adding popularity and rating thresholds
+- Building a web-based recommendation interface
