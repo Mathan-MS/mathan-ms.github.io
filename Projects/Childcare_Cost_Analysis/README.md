@@ -2,40 +2,29 @@
 
 ## Project Overview
 
-Childcare expenses are among the major financial burdens on families in America. The research project focuses on childcare expenses in America to distinguish differences across locations, types of childcare, and family income levels.
+This project analyzes U.S. childcare price data to explore childcare affordability patterns across states and over time.
 
-Data analysis and visualization methods will be used throughout the research project in order to study affordability trends in childcare.
+The analysis focuses on childcare cost trends, state-level differences, household income relationships, and the affordability of infant childcare across the United States.
 
 ## Business Problem
 
-Childcare costs can impact family budgets, career decisions, and accessibility to childcare services. It can be beneficial to know whether childcare costs differ from family incomes, as this will reveal where affordability issues exist.
+Childcare costs can place a significant financial burden on families and may vary considerably by location and income level.
 
-The objectives of this project are:
+This project is aimed at accomplishing the following goals:
 
-- To analyze the trends in childcare costs through time.
-- To analyze childcare costs between different states.
-- To analyze differences between childcare types.
-- To analyze childcare costs relative to family incomes.
-- To find out where there are more affordability issues.
-- To present the information by using visualization techniques.
+- Examine national childcare cost trends over time.
+- Compare childcare costs across states.
+- Explore the relationship between household income and childcare costs.
+- Identify states with relatively high and low infant childcare costs.
+- Present the findings through clear visualizations.
 
 ## Dataset
 
-This project uses the National Database of Childcare Prices, which contains information on childcare prices in the United States.
+The project uses:
 
-The analysis uses data from 2008-2018 and covers childcare costs, geographic area, type of childcare, and income levels.
+`nationaldatabaseofchildcareprices.xlsx`
 
-**Dataset Source:** https://www.dol.gov/agencies/wb/topics/featured-childcare
-
-Key variables include:
-
-- State
-- Year
-- Childcare prices
-- Age group of children
-- Type of childcare
-- Household income
-- Geographic characteristics
+The dataset contains childcare price information for U.S. states and includes measures related to childcare costs, geography, and household economic conditions.
 
 ## Tools & Technologies
 
@@ -45,70 +34,82 @@ Key variables include:
 - NumPy
 - Matplotlib
 - Seaborn
+- OpenPyXL
 
 ## Project Workflow
 
 The project follows these main steps:
 
-1. **Data Cleaning and Preparation**
-   - Examined the structure of the data and variables provided.
-   - Identified missing values and inconsistencies.
-   - Prepared the data on prices for child care and family income for the analysis.
-   - Sorted the data by year, state, and type of child care.
+1. **Data Loading**
+   - Loaded the childcare price dataset from the `data/` folder.
 
-2. **Exploratory Data Analysis**
-   - Explored the distribution of prices for child care.
-   - Comparing the prices for child care across different states and years.
-   - Comparing differences between types of child care and ages.
+2. **Data Cleaning and Preparation**
+   - Reviewed the dataset structure.
+   - Cleaned and prepared fields used in the analysis.
+   - Saved the cleaned dataset for reuse.
 
-3. **Affordability Analysis**
-   - Comparing prices of child care to the family income.
-   - Exploring the proportion of family income needed to cover the expenses of child care.
-   - Identifying differences in affordability by geographical location.
+3. **National Trend Analysis**
+   - Examined childcare cost trends over time.
 
-4. **Data Visualization**
-   - Visualizing trends in prices for child care.
-   - Comparing costs between states and types of child care.
-   - Understandably visualizing patterns of affordability.
+4. **Cost Distribution Analysis**
+   - Reviewed the distribution of childcare costs.
+
+5. **Income and Childcare Cost Analysis**
+   - Examined the relationship between household income and childcare costs.
+
+6. **State-Level Analysis**
+   - Identified states with the highest infant childcare costs.
+   - Identified states with the lowest infant childcare costs.
+
+7. **Summary Visualization**
+   - Created an infographic-style summary of the main findings.
+
+## Visualizations
+
+The analysis includes:
+
+- National childcare cost trend
+- Childcare cost distribution
+- Income versus childcare cost
+- Top 15 states by infant childcare cost
+- Lowest 15 states by infant childcare cost
+- Childcare affordability infographic
 
 ## Key Findings
 
-Several significant patterns of U.S. childcare costs and affordability were revealed during the analysis:
+The analysis shows that childcare costs vary considerably across states and over time.
 
-- There were great differences in childcare costs among different locations.
-- Childcare cost changes were observed throughout the period of the analysis.
-- Cost of childcare varied depending on the age of the child and the childcare type.
-- Infants' childcare costs were among the highest of all childcare types.
-- A comparison of childcare costs and income made it possible to understand that there are differences in the financial impact of childcare expenses for different people living in different locations.
-- Some locations and childcare types have been revealed where expenses may significantly take up the family budget.
+The project also highlights differences in affordability by comparing childcare costs with household income and by identifying states with relatively high and low infant childcare costs.
 
 ## Outcome
 
-This project shows how analytics can be applied to study the affordability of one of the family's expenses.
+This project provides a visual overview of childcare affordability in the United States.
 
-The application of the three variables (cost of child care, location, and income) helps provide a better understanding of the affordability of child care services in the USA. The results would provide input for debates about child care accessibility and affordability.
+The findings can support further analysis of family expenses, regional affordability, and childcare policy considerations.
 
 ## Installation / Running the Project
 
-1. Clone the repository
+1. Clone the repository:
 
 ```bash
 git clone <repo_url>
 cd <repository_name>
 ```
 
-2. Install the required packages
+2. Place the dataset in the `data/` folder.
+
+3. Install the required packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Launch Jupyter Notebook
+4. Launch Jupyter Notebook:
 
 ```bash
 jupyter notebook
 ```
 
-4. Open and run:
+5. Open and run:
 
-`notebooks/US_Childcare_Affordability_Analysis.ipynb`
+`notebooks/Childcare_Affordability_Analysis.ipynb`

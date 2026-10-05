@@ -99,14 +99,25 @@ The final output includes a trained CNN model, evaluation metrics, training-hist
 
 ## Installation / Running the Project
 
-1. Clone the repository.
+1. Clone the repository:
+
+```bash
+git clone <repo_url>
+cd <repository_name>
+```
 
 2. Install the required packages:
 
 ```bash
-pip install numpy pandas matplotlib scikit-learn tensorflow
+pip install -r requirements.txt
 ```
 
-3. Open and run:
+3. Launch Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+4. Open and run:
 
 `notebooks/MNIST_CNN_Image_Classification.ipynb`

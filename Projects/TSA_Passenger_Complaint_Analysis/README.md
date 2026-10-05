@@ -98,16 +98,27 @@ The findings can support further analysis of airport service quality, passenger 
 
 ## Installation / Running the Project
 
-1. Clone the repository.
+1. Clone the repository:
+
+```bash
+git clone <repo_url>
+cd <repository_name>
+```
 
 2. Place the four CSV files in the `data/` folder.
 
 3. Install the required packages:
 
 ```bash
-pip install pandas matplotlib seaborn
+pip install -r requirements.txt
 ```
 
-4. Open and run:
+4. Launch Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+5. Open and run:
 
 `notebooks/TSA_Complaints_Analysis.ipynb`

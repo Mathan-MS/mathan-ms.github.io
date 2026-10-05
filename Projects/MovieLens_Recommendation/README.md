@@ -97,16 +97,27 @@ The final system demonstrates collaborative filtering, content-based filtering, 
 
 ## Installation / Running the Project
 
-1. Clone the repository.
+1. Clone the repository:
+
+```bash
+git clone <repo_url>
+cd <repository_name>
+```
 
 2. Place the MovieLens files in the `data/` folder.
 
 3. Install the required packages:
 
 ```bash
-pip install pandas numpy scikit-learn fuzzywuzzy python-Levenshtein tabulate
+pip install -r requirements.txt
 ```
 
-4. Open and run:
+4. Launch Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+5. Open and run:
 
 `notebooks/Movie_Recommender_System.ipynb`

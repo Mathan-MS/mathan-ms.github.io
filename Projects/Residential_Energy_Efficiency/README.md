@@ -96,16 +96,27 @@ The final workflow includes data preparation, prompt engineering, GPT-2 LoRA fin
 
 ## Installation / Running the Project
 
-1. Clone the repository.
+1. Clone the repository:
+
+```bash
+git clone <repo_url>
+cd <repository_name>
+```
 
 2. Place the dataset in the `data/` folder.
 
 3. Install the required packages:
 
 ```bash
-pip install pandas numpy matplotlib torch transformers peft datasets accelerate
+pip install -r requirements.txt
 ```
 
-4. Open and run:
+4. Launch Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+5. Open and run:
 
 `notebooks/Energy_Efficiency_Optimization.ipynb`

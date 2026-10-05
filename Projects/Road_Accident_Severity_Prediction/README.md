@@ -107,16 +107,27 @@ The analysis combines predictive modeling, statistical association testing, clas
 
 ## Installation / Running the Project
 
-1. Clone the repository.
+1. Clone the repository:
+
+```bash
+git clone <repo_url>
+cd <repository_name>
+```
 
 2. Place `RTA Dataset.csv` in the `data/` folder.
 
 3. Install the required packages:
 
 ```bash
-pip install pandas numpy matplotlib seaborn scipy scikit-learn xgboost
+pip install -r requirements.txt
 ```
 
-4. Open and run:
+4. Launch Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+5. Open and run:
 
 `notebooks/Road_Accident_Severity_Prediction.ipynb`

@@ -2,20 +2,20 @@
 
 ## Project Overview
 
-Customer churn has emerged as one of the biggest challenges for telecommunications firms, as it can negatively impact revenue and increase customer acquisition costs. This project will use telecom customer data to determine the factors driving customer churn and apply machine learning models to predict churners.
+Customer churn is one of the major challenges for telecommunications companies because it can negatively affect revenue and increase customer acquisition costs. This project uses telecom customer data to identify factors associated with churn and applies machine learning models to predict customers who may leave.
 
-An end-to-end process will be followed in this project to address customer churn using data science methods.
+An end-to-end data science workflow is used to prepare the data, explore churn patterns, address class imbalance, train classification models, and compare model performance.
 
 ## Business Problem
 
-Telecommunications firms deal with clients who are on various services and contracts. It is beneficial for organizations to identify clients at risk of churn, as this enables better client retention.
+Telecommunications companies serve customers with different services, contracts, and billing arrangements. Identifying customers who are at risk of churning can help support customer-retention efforts.
 
 This project is aimed at accomplishing the following goals:
 
-- To identify features that are associated with customer churn.
-- To find out how services, contracts, and account features are related to customer retention.
-- To build predictive models of customer churn using machine learning.
-- To compare different classification models.
+- Identify features associated with customer churn.
+- Examine how services, contracts, and account characteristics relate to customer retention.
+- Build predictive models for customer churn.
+- Compare multiple classification models.
 
 ## Dataset
 
@@ -37,7 +37,7 @@ Key variables include:
 - Total Charges
 - Churn
 
-The target variable is Churn, which indicates whether a customer discontinued service.
+The target variable is `Churn`, which indicates whether a customer discontinued service.
 
 ## Tools & Technologies
 
@@ -56,22 +56,22 @@ The target variable is Churn, which indicates whether a customer discontinued se
 The project follows these main steps:
 
 1. **Data Cleaning and Preparation**
-   - Conducted an analysis of the dataset for any missing or incorrect data values.
-   - Changed the type of the variable where required.
-   - Preliminary preparation of categorical and numeric features.
+   - Reviewed the dataset for missing or incorrect values.
+   - Converted variables to appropriate data types.
+   - Prepared categorical and numeric features.
 
 2. **Exploratory Data Analysis**
-   - Identifying details regarding the customers and their pattern of churn.
-   - Analyzing the correlation between customer churn and tenure, contract type, services, charges, etc.
-   - Conducted analysis using the help of visualizations to detect any trends.
+   - Examined customer characteristics and churn patterns.
+   - Analyzed relationships between churn and tenure, contract type, services, and charges.
+   - Used visualizations to identify trends.
 
 3. **Feature Engineering**
-   - Transforming the categorical features into numeric features.
-   - Splitting the data set into training and testing sets.
+   - Converted categorical variables into numeric form.
+   - Split the data into training and testing sets.
 
 4. **Class Imbalance Handling**
-   - Applying the SMOTE technique on the training dataset to handle the class imbalance problem.
-   - Reserving the test data set separately to evaluate the model.
+   - Applied SMOTE to the training data.
+   - Kept the test data separate for final evaluation.
 
 5. **Model Development**
    - Logistic Regression
@@ -79,11 +79,11 @@ The project follows these main steps:
    - XGBoost
 
 6. **Model Evaluation**
-   - Evaluation of the classification models based on several evaluation metrics.
+   - Compared the classification models using multiple evaluation metrics.
 
 ## Model Evaluation
 
-The models were evaluated based on:
+The models were evaluated using:
 
 - Accuracy
 - Precision
@@ -92,43 +92,41 @@ The models were evaluated based on:
 - ROC-AUC
 - Confusion Matrix
 
-Particular emphasis was placed on the metric Recall for churned customers because you may miss the opportunity to retain them if you fail to recognize them as churned.
-
-Comparing different models made it possible to determine which one offered the best trade-off.
+Particular emphasis was placed on recall for churned customers because failing to identify customers who are likely to leave may result in missed retention opportunities.
 
 ## Key Findings
 
-The analysis made it clear that churn behavior is related to several characteristics of customers and accounts.
+The analysis showed that churn behavior is related to several customer and account characteristics.
 
-The key findings from the analysis are:
+Key findings include:
 
-- Tenure of the customer was one of the significant factors in understanding churn behavior.
-- The type of contract had some significance in terms of customer retention behavior.
-- Churn behavior is linked to monthly charges and the types of services subscribed to by the customers.
-- The different service-related attributes, including internet service, online security, and technical support, gave useful insights into customer churn behavior.
+- Customer tenure was an important factor in understanding churn behavior.
+- Contract type was related to customer retention behavior.
+- Monthly charges and subscribed services were associated with churn.
+- Service-related variables such as internet service, online security, and technical support provided useful insight into churn behavior.
 
 ## Outcome
 
-In this project, it was shown that customer information and machine learning techniques could be applied to identify potential churn customers.
+This project demonstrates how customer data and machine learning can be used to identify customers who may be at risk of churning.
 
-The findings will assist telecommunications companies in gaining a better understanding of customer behavior and in detecting customers at high risk of churning.
+The findings can help telecommunications companies better understand customer behavior and support customer-retention strategies.
 
 ## Installation / Running the Project
 
-1. Clone the repository
+1. Clone the repository:
 
 ```bash
 git clone <repo_url>
 cd <repository_name>
 ```
 
-2. Install the required packages
+2. Install the required packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Launch Jupyter Notebook
+3. Launch Jupyter Notebook:
 
 ```bash
 jupyter notebook

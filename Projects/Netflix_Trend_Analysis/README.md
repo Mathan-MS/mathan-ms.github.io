@@ -34,6 +34,7 @@ The datasets contain information about Netflix Top 10 rankings, weekly views, cu
 - Python
 - Jupyter Notebook
 - Pandas
+- NumPy
 - Matplotlib
 - OpenPyXL
 
@@ -47,7 +48,7 @@ The project follows these main steps:
 2. **Data Cleaning and Preparation**
    - Standardized column names.
    - Converted date and numeric fields.
-   - Created combined movie and season titles.
+   - Created combined title fields.
    - Removed duplicate records.
 
 3. **Global Viewership Analysis**
@@ -58,7 +59,7 @@ The project follows these main steps:
    - Measured cumulative weeks in the Netflix Top 10.
 
 5. **Ranking Distribution Analysis**
-   - Grouped ranking positions into top, middle, and lower ranges.
+   - Grouped ranking positions into ranges.
 
 6. **Country-Level Analysis**
    - Compared the number of unique popular titles by country.
@@ -98,16 +99,27 @@ The findings can support content planning, promotion, audience engagement, and i
 
 ## Installation / Running the Project
 
-1. Clone the repository.
+1. Clone the repository:
 
-2. Place the three Excel files in the `data/` folder.
+```bash
+git clone <repo_url>
+cd <repository_name>
+```
+
+2. Place the three Excel datasets in the `data/` folder.
 
 3. Install the required packages:
 
 ```bash
-pip install pandas matplotlib openpyxl
+pip install -r requirements.txt
 ```
 
-4. Open and run:
+4. Launch Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+5. Open and run:
 
 `notebooks/Netflix_Viewership_Analysis.ipynb`

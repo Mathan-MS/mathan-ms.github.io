@@ -84,20 +84,31 @@ The analysis identified several important patterns:
 
 This project demonstrates the use of SARIMA for seasonal retail-sales forecasting.
 
-The results also show the limitations of historical time-series models when a series experiences a rapid structural change.
+The results also show the limitations of historical time-series models when a series experiences rapid structural change.
 
 ## Installation / Running the Project
 
-1. Clone the repository.
+1. Clone the repository:
+
+```bash
+git clone <repo_url>
+cd <repository_name>
+```
 
 2. Place the dataset in the `data/` folder.
 
 3. Install the required packages:
 
 ```bash
-pip install pandas numpy matplotlib statsmodels
+pip install -r requirements.txt
 ```
 
-4. Open and run:
+4. Launch Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+5. Open and run:
 
 `notebooks/US_Retail_Sales_Forecasting.ipynb`
