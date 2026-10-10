@@ -1,0 +1,25 @@
+Original Feature,Importance
+Type_of_vehicle,0.10891728
+Area_accident_occured,0.08264854
+Vehicle_movement,0.0773709
+Road_allignment,0.059718955
+Types_of_Junction,0.05497959
+Day_of_week,0.05220128
+Weather_conditions,0.04983051
+Type_of_collision,0.04953309
+Driving_experience,0.045540616
+Educational_level,0.04533288
+Lanes_or_Medians,0.041480206
+Service_year_of_vehicle,0.0399591
+Age_band_of_driver,0.038784962
+Pedestrian_movement,0.03634337
+Road_surface_type,0.033133417
+Light_conditions,0.03089742
+Time_of_day,0.027991794
+Owner_of_vehicle,0.024118887
+Vehicle_driver_relation,0.02164178
+Sex_of_driver,0.020219903
+Road_surface_conditions,0.020128816
+Defect_of_vehicle,0.018555468
+Number_of_vehicles_involved,0.013448971
+Hour,0.0072222073

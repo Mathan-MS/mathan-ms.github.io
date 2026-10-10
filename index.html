@@ -1,484 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mathankumar Kumar Kodirajan's data science and generative AI portfolio.">
-  <title>Mathankumar Kumar Kodirajan | Data Science Portfolio</title>
-  <style>
-    :root {
-      --navy: #102a43;
-      --blue: #1677ff;
-      --blue-dark: #0b5ed7;
-      --pale: #eef6ff;
-      --text: #243b53;
-      --muted: #627d98;
-      --border: #d9e2ec;
-      --white: #ffffff;
-      --shadow: 0 12px 30px rgba(16, 42, 67, 0.10);
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      background: #f7f9fc;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.65;
-    }
-
-    .site-header {
-      background: linear-gradient(135deg, var(--navy), #1f5f99);
-      color: var(--white);
-      padding: 34px 20px 26px;
-      text-align: center;
-    }
-
-    .site-header h1 {
-      margin: 0;
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.2;
-    }
-
-    .site-header p {
-      margin: 10px 0 0;
-      color: #d9ecff;
-      font-size: 1.05rem;
-    }
-
-    .tabs-wrap {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 4px 16px rgba(16, 42, 67, 0.07);
-    }
-
-    .tabs {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      overflow-x: auto;
-    }
-
-    .tab-button {
-      padding: 17px 28px;
-      border: 0;
-      border-bottom: 4px solid transparent;
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .tab-button:hover,
-    .tab-button:focus-visible {
-      color: var(--blue);
-      background: var(--pale);
-      outline: none;
-    }
-
-    .tab-button.active {
-      color: var(--blue-dark);
-      border-bottom-color: var(--blue);
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 42px 20px 60px;
-    }
-
-    .tab-content { display: none; }
-    .tab-content.active { display: block; animation: fadeIn 0.25s ease; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h2 {
-      margin: 0 0 22px;
-      color: var(--navy);
-      font-size: clamp(1.7rem, 4vw, 2.25rem);
-    }
-
-    h3 { color: var(--navy); line-height: 1.35; }
-
-    .about-card,
-    .project-card,
-    .detail-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-    }
-
-    .about-card { padding: clamp(24px, 5vw, 48px); }
-
-    .eyebrow {
-      margin: 0 0 8px;
-      color: var(--blue-dark);
-      font-size: 0.85rem;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin: 25px 0;
-    }
-
-    .skill {
-      padding: 7px 12px;
-      border: 1px solid #b8d8ff;
-      border-radius: 999px;
-      background: var(--pale);
-      color: #124e89;
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 7px;
-      background: var(--blue);
-      color: var(--white);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .button:hover { background: var(--blue-dark); }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .project-card {
-      display: flex;
-      gap: 15px;
-      align-items: flex-start;
-      padding: 21px;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 34px rgba(16, 42, 67, 0.15);
-    }
-
-    .project-number {
-      min-width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--blue);
-      color: var(--white);
-      font-weight: 800;
-    }
-
-    .project-card h3 { margin: 2px 0 5px; font-size: 1.05rem; }
-    .project-card p { margin: 0; color: var(--muted); font-size: 0.94rem; }
-
-    .detail-card {
-      margin-bottom: 22px;
-      padding: clamp(22px, 4vw, 34px);
-      scroll-margin-top: 90px;
-    }
-
-    .detail-card h3 { margin: 0 0 13px; font-size: 1.35rem; }
-    .detail-card p { margin: 8px 0; }
-    .detail-card ul { margin: 8px 0 0; padding-left: 22px; }
-    .label { color: var(--navy); font-weight: 800; }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 16px;
-      color: var(--blue-dark);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .project-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      align-items: center;
-      margin-top: 20px;
-    }
-
-    .project-actions .back-link { margin-top: 0; }
-
-    footer {
-      padding: 24px 20px;
-      background: var(--navy);
-      color: #d9ecff;
-      text-align: center;
-    }
-
-    @media (max-width: 720px) {
-      .project-grid { grid-template-columns: 1fr; }
-      .tab-button { flex: 1; padding: 14px 12px; font-size: 0.9rem; }
-      main { padding-top: 28px; }
-    }
-  </style>
-</head>
-<body>
-  <header class="site-header">
-    <h1>Mathankumar Kumar Kodirajan</h1>
-    <p>Data Science • Machine Learning • Generative AI</p>
-  </header>
-
-  <nav class="tabs-wrap" aria-label="Portfolio sections">
-    <div class="tabs" role="tablist">
-      <button class="tab-button active" id="about-tab" role="tab" aria-selected="true" aria-controls="about" data-tab="about">About Me</button>
-      <button class="tab-button" id="projects-tab" role="tab" aria-selected="false" aria-controls="projects" data-tab="projects">Projects</button>
-      <button class="tab-button" id="contact-tab" role="tab" aria-selected="false" aria-controls="contact" data-tab="contact">Contact</button>
-    </div>
-  </nav>
-
-  <main>
-    <section
-  id="about"
-  class="tab-content active"
-  role="tabpanel"
-  aria-labelledby="about-tab"
->
-  <div class="about-card">
-
-    <p class="eyebrow">About Me</p>
-
-    <h2>
-      IT and Telecom Billing Professional |
-      Data Science • Machine Learning • Generative AI
-    </h2>
-
-    <p>
-      I am Mathankumar Kumar Kodirajan, an IT professional with more
-      than 20 years of industry experience, including 16 years
-      specializing in enterprise telecom billing systems. My
-      professional background includes software quality assurance,
-      test leadership, billing-system validation, release coordination,
-      root-cause analysis, risk management, and onsite-offshore team
-      collaboration.
-    </p>
-
-    <p>
-      I am currently pursuing a Master’s degree in Data Science at
-      Bellevue University. Through my academic and independent projects,
-      I have gained practical experience in machine learning,
-      predictive analytics, statistical analysis, data visualization,
-      recommendation systems, time-series forecasting, and generative AI.
-    </p>
-
-    <p>
-      I combine extensive telecom domain knowledge, quality-engineering
-      experience, and data science capabilities to develop reliable,
-      practical, and data-driven solutions. My approach emphasizes
-      analytical problem-solving, accuracy, responsible AI, operational
-      efficiency, and measurable business value.
-    </p>
-
-    <div class="skills" aria-label="Technical skills">
-      <span class="skill">Python</span>
-      <span class="skill">SQL</span>
-      <span class="skill">Pandas</span>
-      <span class="skill">NumPy</span>
-      <span class="skill">Scikit-learn</span>
-      <span class="skill">XGBoost</span>
-      <span class="skill">TensorFlow</span>
-      <span class="skill">Hugging Face</span>
-      <span class="skill">LangChain</span>
-      <span class="skill">MLflow</span>
-      <span class="skill">Streamlit</span>
-      <span class="skill">Statistical Analysis</span>
-      <span class="skill">Predictive Modeling</span>
-      <span class="skill">Data Visualization</span>
-    </div>
-
-    <a
-      class="button"
-      href="https://github.com/Mathan-MS"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      View My GitHub
-    </a>
-
-  </div>
-</section>
-
-    <section id="projects" class="tab-content" role="tabpanel" aria-labelledby="projects-tab">
-      <h2>Projects</h2>
-
-      <article class="detail-card" id="project1">
-        <h3>1. Telecom Customer Churn Prediction</h3>
-        <p><span class="label">Project overview:</span> Data on telecommunications customers is analyzed to identify which customers may discontinue service. Customer demographics, accounts, services, contracts, and billing features are analyzed using various machine-learning classification techniques.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, NumPy, Scikit-learn, XGBoost, imbalanced-learn, and Matplotlib.</p>
-        <p><span class="label">Key skills:</span> Data preprocessing, feature engineering, classification, class imbalance techniques, and prediction modeling.</p>
-        <p><span class="label">Outcome:</span> Insights into customer churn have been provided to help businesses better understand customer behavior and retention programs.</p>
-        <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Telecom_Churn_Prediction" target="_blank" rel="noopener noreferrer">View Source Code</a>
-        </div>
-      </article>
-
-      <article class="detail-card" id="project2">
-        <h3>2. U.S. Childcare Affordability Analysis</h3>
-        <p><span class="label">Project overview:</span> The project analyzes childcare affordability in the United States by examining childcare costs, incomes, geographic disparities, provider types, and age groups. Visualizations are used to explain differences in childcare affordability and to communicate socioeconomic data.</p>
-        <p><span class="label">Tools and technologies:</span> Tableau, Data Visualization, PowerPoint, and Data Analytics.</p>
-        <p><span class="label">Key skills:</span> Exploratory data analysis, dashboard creation, trends analysis, geographic comparison, and data visualization.</p>
-        <p><span class="label">Outcome:</span> Helped provide greater insight into childcare affordability.</p>
-        <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Childcare_Cost_Analysis" target="_blank" rel="noopener noreferrer">View Source Code</a>
-        </div>
-      </article>
-
-      <article class="detail-card" id="project3">
-        <h3>3. AI-Based Residential Energy Efficiency Optimization</h3>
-        <p><span class="label">Project overview:</span> This project examines the role of generative AI in analyzing residential energy and environmental data and in making structured suggestions for energy efficiency. Household energy usage data are converted into samples that enable an AI model to provide tailored advice for each household.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Hugging Face Transformers, GPT-2, LoRA, PEFT, PyTorch, and Pandas.</p>
-        <p><span class="label">Key skills:</span> Generative AI, fine-tuning models, prompt engineering, data preparation, model evaluation, and responsible AI.</p>
-        <p><span class="label">Outcome:</span> Successfully demonstrated the ability of AI to generate practical recommendations from residential energy data.</p>
-        <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Residential_Energy_Efficiency" target="_blank" rel="noopener noreferrer">View Source Code</a>
-        </div>
-      </article>
-
-      <article class="detail-card" id="project4">
-        <h3>4. Netflix Top 10 Content &amp; Viewership Analysis</h3>
-        <p><span class="label">Project overview:</span> This project involves analyzing Netflix Top 10 data to understand trends in content popularity and audience behavior. The analysis includes popular content, the staying power of content within the Top 10 list, differences by country, early performance, and the correlation between duration and views.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, Jupyter Notebook, Matplotlib, Data Visualization, and PowerPoint.</p>
-        <p><span class="label">Key skills:</span> Data cleaning, exploratory analysis, trend analysis, data visualization, audience analysis, and visual storytelling.</p>
-        <p><span class="label">Outcome:</span> Insights from the data will help stakeholders make sense of audience preferences and content performance.</p>
-        <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Netflix_Trend_Analysis" target="_blank" rel="noopener noreferrer">View Source Code</a>
-        </div>
-      </article>
-
-      <article class="detail-card" id="project5">
-        <h3>5. U.S. Retail Sales Forecasting Using Time-Series Analysis</h3>
-        <p><span class="label">Project overview:</span> This project performs a time-series analysis on historical U.S. retail sales data to gain insight into trends, seasonality, and dynamics. Historical behavior is studied using time-series analysis and applied to future forecasting.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, NumPy, Statsmodels, Matplotlib, and Jupyter Notebook.</p>
-        <p><span class="label">Key skills:</span> Time-series analysis, forecasting, trend analysis, seasonality analysis, data visualization, and model evaluation.</p>
-        <p><span class="label">Outcome:</span> Insights gained from historical U.S. retail sales behavior and the application of trends toward future forecasting.</p>
-        <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Retail_Sales_Forecasting" target="_blank" rel="noopener noreferrer">View Source Code</a>
-        </div>
-      </article>
-
-      <article class="detail-card" id="project6">
-        <h3>6. Hybrid Movie Recommendation System Using MovieLens</h3>
-        <p><span class="label">Project overview:</span> This project involves creating a movie recommendation system that allows the user to choose a preferred movie and receive recommendations for other movies they might like. The recommender uses movie ratings and other attributes to determine similarities.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, NumPy, Scikit-learn, TF-IDF, and Cosine Similarity.</p>
-        <p><span class="label">Key skills:</span> Recommender systems, collaborative filtering, content-based filtering, similarity analysis, recommendation ranking, and data cleaning.</p>
-        <p><span class="label">Outcome:</span> Developed a personalized recommendation system that assists users in finding movies through similarities.</p>
-        <div class="project-actions">
-          <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/MovieLens_Recommendation" target="_blank" rel="noopener noreferrer">View Source Code</a>
-        </div>
-      </article>
-
-      <article class="detail-card" id="project7">
-        <h3>7. TSA Passenger Complaint &amp; Airport Operations Analysis</h3>
-        <p><span class="label">Project overview:</span> The main objective of this project is to analyze passenger complaint data for the TSA and identify trends in complaints over time and across locations. Data visualization methods are applied in the process.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, Jupyter Notebook, Matplotlib, Data Visualization, and PowerPoint.</p>
-        <p><span class="label">Key skills:</span> Operational analytics, data cleansing, trend analysis, geographic analysis, data visualization, and storytelling through visualization.</p>
-        <p><span class="label">Outcome:</span> Identified passenger complaint patterns to help determine recurring passenger concerns.</p>
-        <div class="project-actions">
-          <span class="label">Source code:</span> <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/TSA_Passenger_Complaint_Analysis" target="_blank" rel="noopener noreferrer">View Source Code</a>
-        </div>
-      </article>
-
-      <article class="detail-card" id="project8">
-        <h3>8. Predicting Road Accident Severity Using Machine Learning</h3>
-        <p><span class="label">Project overview:</span> In this project, road accident data will be analyzed to identify patterns related to accident severity. The project explores available accident-related features and predicts patterns that lead to more severe outcomes.</p>
-        <p><span class="label">Tools and technologies:</span> Python, Pandas, NumPy, Scikit-learn, and Matplotlib.</p>
-        <p><span class="label">Key skills:</span> Exploratory data analysis, data preprocessing, feature engineering, classification, predictive modeling, and model evaluation.</p>
-        <p><span class="label">Outcome:</span> Identify patterns associated with accident severity and provide insights to better understand road safety risks.</p>
-        <div class="project-actions">
-          <span class="label">Source code:</span> <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Road_Accident_Severity_Prediction" target="_blank" rel="noopener noreferrer">View Source Code</a>
-        </div>
-      </article>
-
-      <article class="detail-card" id="project9">
-        <h3>9. MNIST Image Classification Using CNN</h3>
-        <p><span class="label">Project overview:</span> A convolutional neural network (CNN) is used to classify handwritten digits from images. The neural network learns patterns in handwritten digits and classifies them as numbers from zero to nine.</p>
-        <p><span class="label">Tools and technologies:</span> Python, TensorFlow, Keras, NumPy, Matplotlib, and Jupyter Notebook.</p>
-        <p><span class="label">Key skills:</span> Deep learning, convolutional neural networks, image recognition, data preprocessing, model training, model evaluation, and data visualization.</p>
-        <p><span class="label">Outcome:</span> Illustrated how deep learning may be used for image recognition by building a model that can recognize and classify handwritten digits.</p>
-        <div class="project-actions">
-          <span class="label">Source code:</span> <a class="button" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/MNIST_Image_Classification_CNN" target="_blank" rel="noopener noreferrer">View Source Code</a>
-        </div>
-      </article>
-
-      <article class="detail-card" id="project10">
-        <h3>10. Course Project – TBD</h3>
-        <p><span class="label">Project overview:</span> This portfolio project has not yet been selected. The project details will be added after the final course project is confirmed.</p>
-        <p><span class="label">Tools and technologies:</span> To be determined.</p>
-        <p><span class="label">Key skills:</span> To be determined.</p>
-        <p><span class="label">Outcome:</span> To be determined.</p>
-        <div class="project-actions">
-          <span class="label">Source code:</span> To be added
-        </div>
-      </article>
-    </section>
-
-
-    <section id="contact" class="tab-content" role="tabpanel" aria-labelledby="contact-tab">
-      <h2>Contact</h2>
-      <div class="about-card">
-        <p class="eyebrow">Get in Touch</p>
-        <h3>Contact Information</h3>
-        <p>I welcome opportunities to connect regarding data science, data analytics, machine learning, and related professional opportunities.</p>
-        <p><span class="label">Email:</span> <a href="mailto:mkumarkodirajan@my365.bellevue.edu">mkumarkodirajan@my365.bellevue.edu</a></p>
-        <p><span class="label">GitHub:</span> <a href="https://github.com/Mathan-MS" target="_blank" rel="noopener noreferrer">github.com/Mathan-MS</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; <span id="year"></span> Mathankumar Kumar Kodirajan • <a href="https://github.com/Mathan-MS" target="_blank" rel="noopener noreferrer" style="color:#ffffff;">GitHub</a></p>
-  </footer>
-
-  <script>
-    const buttons = document.querySelectorAll('.tab-button');
-    const panels = document.querySelectorAll('.tab-content');
-
-    function showTab(tabId) {
-      panels.forEach(panel => panel.classList.toggle('active', panel.id === tabId));
-      buttons.forEach(button => {
-        const selected = button.dataset.tab === tabId;
-        button.classList.toggle('active', selected);
-        button.setAttribute('aria-selected', selected ? 'true' : 'false');
-      });
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    buttons.forEach(button => button.addEventListener('click', () => {
-      history.replaceState(null, '', '#' + button.dataset.tab);
-      showTab(button.dataset.tab);
-    }));
-
-    const initialHash = window.location.hash.slice(1);
-    if (['about', 'projects', 'contact'].includes(initialHash)) {
-      showTab(initialHash);
-    }
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mathankumar Kumar Kodirajan — IT leadership, business intelligence, analytics and data science portfolio.">
+<title>Mathankumar | Business Intelligence & Data Science Portfolio</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f5f7fa;color:#1b2938;font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.65}a{color:inherit}button{font:inherit}.shell{max-width:1180px;margin:auto;padding:0 28px}.site-nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid #e2e8f0;backdrop-filter:blur(16px)}.nav-inner{min-height:76px;display:flex;justify-content:space-between;align-items:center;gap:18px}.brand{font-weight:800;letter-spacing:-.04em;font-size:1.24rem;text-decoration:none;color:#142a43}.brand span{color:#1874ad}.nav-links{display:flex;gap:28px;align-items:center}.nav-links a{text-decoration:none;font-size:.92rem;font-weight:650;color:#41536a}.nav-links a:hover,.nav-links a:focus-visible{color:#0078bd}.nav-links .nav-contact{background:#142a43;color:#fff;padding:10px 16px;border-radius:8px}.hero{background:linear-gradient(115deg,#10253b 0%,#153957 68%,#165b77 100%);color:white;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.5fr .75fr;gap:45px;align-items:center;padding-top:104px;padding-bottom:104px}.eyebrow{color:#74d2ec;text-transform:uppercase;letter-spacing:.17em;font-weight:750;font-size:.76rem}.hero h1{font-size:clamp(2.8rem,5.6vw,5rem);line-height:1.08;letter-spacing:-.055em;margin:16px 0 24px;max-width:850px}.hero h1 em{font-style:normal;color:#88d9f0}.hero p{font-size:1.1rem;max-width:690px;color:#d4e3ef}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}.btn{display:inline-block;padding:13px 20px;border-radius:8px;font-weight:750;text-decoration:none;font-size:.92rem}.btn-primary{background:#75d6ee;color:#10253b}.btn-outline{border:1px solid #8ca6b8;color:#fff}.hero-panel{border:1px solid #6689a1;background:rgba(255,255,255,.07);padding:30px;border-radius:16px}.hero-panel h2{font-size:1rem;color:#9cdbed;margin:0 0 18px}.stat{border-top:1px solid #54738b;padding:17px 0}.stat strong{font-size:2.2rem;letter-spacing:-.04em;display:block;line-height:1.2}.stat span{font-size:.88rem;color:#d5e5f0}.section{padding:86px 0}.section.alt{background:#fff}.section-heading{max-width:790px;margin-bottom:32px}.section-label{color:#0876a7;text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800}.section h2{font-size:clamp(2rem,3.6vw,2.8rem);line-height:1.18;letter-spacing:-.04em;margin:12px 0 18px;color:#152d45}.lead{color:#546579;font-size:1.08rem}.about-layout{display:grid;grid-template-columns:1.5fr .8fr;gap:44px}.about-copy p{margin:0 0 18px;color:#40536a}.side-card{background:#f0f5f9;border:1px solid #dde6ed;border-radius:14px;padding:27px}.side-card h3{margin:0 0 16px;font-size:1rem}.skill-tags{display:flex;gap:8px;flex-wrap:wrap}.skill-tags span{background:#fff;border:1px solid #d9e4ec;border-radius:6px;padding:7px 10px;font-size:.8rem;color:#2b4d64}.project-toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:24px;flex-wrap:wrap}.filter-controls{display:flex;flex-wrap:wrap;gap:8px}.filter-btn{border:1px solid #d8e2ea;background:#fff;color:#455a70;border-radius:7px;padding:9px 13px;cursor:pointer;font-weight:650;font-size:.83rem}.filter-btn.active{background:#153b59;border-color:#153b59;color:white}.project-count{color:#66788b;font-size:.85rem}.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.project-card[hidden]{display:none}.project-card{display:flex;flex-direction:column;background:#fff;border:1px solid #dce5ec;border-radius:13px;padding:28px;box-shadow:0 8px 26px rgba(22,47,69,.035);min-height:310px}.project-card:hover{border-color:#9fc3d5;box-shadow:0 12px 30px rgba(22,47,69,.08)}.project-meta{display:flex;justify-content:space-between;align-items:center;gap:10px}.project-index{font-size:.84rem;color:#8b9dac;font-weight:800}.category{background:#eaf4f8;color:#226280;border-radius:99px;padding:5px 10px;font-size:.75rem;font-weight:750}.project-card h3{font-size:1.28rem;line-height:1.35;letter-spacing:-.025em;color:#17324b;margin:22px 0 12px}.project-description{font-size:.93rem;color:#526579;margin:0 0 20px;flex:1}.project-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid #e7edf2}.project-link{font-weight:750;color:#086f9e;text-decoration:none;font-size:.86rem}.detail-toggle{border:0;background:none;color:#566c7d;font-weight:700;cursor:pointer;font-size:.84rem}.project-extra{display:none;border-top:1px solid #e7edf2;padding-top:15px;margin-bottom:16px;font-size:.86rem;color:#526579}.project-extra p{margin:3px 0 13px}.project-extra strong{color:#213e56}.project-card.expanded .project-extra{display:block}.pending{color:#8995a2;font-size:.83rem}.contact-section{background:#142c43;color:#fff}.contact-section h2{color:white}.contact-section p{color:#c7d8e6}.contact-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.contact-links a{border:1px solid #7890a4;border-radius:8px;padding:12px 16px;text-decoration:none;font-weight:700}.contact-links a:hover{background:#244963}.footer{background:#0d2134;color:#b2c7d6;padding:22px 0;font-size:.83rem}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}@media(max-width:800px){.hero-grid,.about-layout{grid-template-columns:1fr}.hero-grid{padding-top:70px;padding-bottom:70px}.hero-panel{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.hero-panel h2{grid-column:1/-1}.stat{padding:12px 0}.stat strong{font-size:1.7rem}.project-grid{grid-template-columns:1fr}.nav-links{gap:12px}.nav-links a{font-size:.83rem}}@media(max-width:520px){.shell{padding:0 18px}.nav-inner{align-items:flex-start;flex-direction:column;padding-top:14px;padding-bottom:14px}.nav-links{width:100%;justify-content:space-between}.hero-grid{padding-top:55px;padding-bottom:60px}.hero-panel{padding:18px}.hero-panel .stat span{font-size:.73rem}.section{padding:64px 0}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style></head>
+<body><header class="site-nav"><div class="shell nav-inner"><a class="brand" href="#home">Mathankumar<span>.</span></a>
+<nav class="nav-links" aria-label="Main navigation"><a href="#about">About</a><a href="#projects">Projects</a><a class="nav-contact" href="#contact">Contact ↗</a></nav></div></header>
+<main><section class="hero" id="home"><div class="shell hero-grid"><div>
+<div class="eyebrow">Technology leadership · Business intelligence · Data science</div>
+<h1>Bridging <em>business strategy</em> and data-driven technology.</h1>
+<p>20+ years in enterprise IT, including deep telecommunications expertise. I combine technical delivery leadership, business intelligence and applied data science to solve complex business problems.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="#projects">Explore my work ↗</a><a class="btn btn-outline" href="https://github.com/Mathan-MS" target="_blank" rel="noopener noreferrer">GitHub profile</a></div>
+</div><aside class="hero-panel" aria-label="Professional highlights"><h2>AT A GLANCE</h2><div class="stat"><strong>20+</strong><span>Years of IT experience</span></div><div class="stat"><strong>16</strong><span>Years in telecom billing</span></div><div class="stat"><strong>10</strong><span>Portfolio project entries</span></div></aside></div></section>
+<section class="section alt" id="about"><div class="shell"><div class="section-heading"><div class="section-label">01 / About</div><h2>Experience that connects systems, people and insights.</h2></div>
+<div class="about-layout"><div class="about-copy">
+<p>I am Mathankumar Kumar Kodirajan, an IT and business intelligence professional with more than 20 years of industry experience, including 16 years specializing in enterprise telecommunications billing systems.</p>
+<p>My background spans business intelligence, software quality assurance, test leadership, release coordination, stakeholder collaboration, root-cause analysis and enterprise technology delivery. I work across business and technical teams to translate complex requirements into practical outcomes.</p>
+<p>I am pursuing a Master of Science in Data Science at Bellevue University, expanding my work into machine learning, predictive analytics, statistical analysis, data visualization, recommender systems, time-series forecasting and generative AI.</p>
+<p>My approach combines hands-on technical problem-solving with leadership, operational reliability, responsible AI and measurable business value.</p></div>
+<aside class="side-card"><h3>Areas of expertise</h3><div class="skill-tags"><span>Business Intelligence</span><span>SQL</span><span>Python</span><span>Data Analytics</span><span>Stakeholder Management</span><span>Technical Leadership</span><span>Pandas</span><span>Scikit-learn</span><span>XGBoost</span><span>TensorFlow</span><span>Hugging Face</span><span>Predictive Modeling</span><span>Data Visualization</span><span>Time-Series Analysis</span></div></aside></div></div></section>
+<section class="section" id="projects"><div class="shell"><div class="section-heading"><div class="section-label">02 / Selected work</div><h2>Projects that turn analysis into action.</h2><p class="lead">Explore work across predictive modeling, business analytics, generative AI, forecasting and intelligent recommendation systems. Select Details to see methods and outcomes.</p></div>
+<div class="project-toolbar"><div class="filter-controls" role="group" aria-label="Filter projects"><button class="filter-btn active" type="button" data-filter="All" aria-pressed="true">All projects</button><button class="filter-btn" type="button" data-filter="Machine Learning" aria-pressed="false">Machine learning</button><button class="filter-btn" type="button" data-filter="Generative AI" aria-pressed="false">Generative AI</button><button class="filter-btn" type="button" data-filter="Forecasting" aria-pressed="false">Forecasting</button><button class="filter-btn" type="button" data-filter="Deep Learning" aria-pressed="false">Deep learning</button></div><span class="project-count" id="project-count">10 entries</span></div>
+<div class="project-grid"><article class="project-card" data-category="Machine Learning">
+      <div class="project-meta"><span class="project-index">01</span><span class="category">Machine Learning</span></div>
+      <h3>Telecom Customer Churn Prediction</h3>
+      <p class="project-description">Data on telecommunications customers is analyzed to identify which customers may discontinue service. Customer demographics, accounts, services, contracts, and billing features are analyzed using various machine-learning classification techniques.</p>
+      <div class="project-extra"><strong>Tools</strong><p>Python, Pandas, NumPy, Scikit-learn, XGBoost, imbalanced-learn, and Matplotlib.</p><strong>Outcome</strong><p>Insights into customer churn have been provided to help businesses better understand customer behavior and retention programs.</p></div>
+      <div class="project-bottom"><a class="project-link" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Telecom_Churn_Prediction" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a><button class="detail-toggle" type="button" aria-expanded="false">Details <span aria-hidden="true">+</span></button></div>
+    </article><article class="project-card" data-category="Data Visualization">
+      <div class="project-meta"><span class="project-index">02</span><span class="category">Data Visualization</span></div>
+      <h3>U.S. Childcare Affordability Analysis</h3>
+      <p class="project-description">The project analyzes childcare affordability in the United States by examining childcare costs, incomes, geographic disparities, provider types, and age groups. Visualizations are used to explain differences in childcare affordability and to communicate socioeconomic data.</p>
+      <div class="project-extra"><strong>Tools</strong><p>Tableau, Data Visualization, PowerPoint, and Data Analytics.</p><strong>Outcome</strong><p>Helped provide greater insight into childcare affordability.</p></div>
+      <div class="project-bottom"><a class="project-link" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Childcare_Cost_Analysis" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a><button class="detail-toggle" type="button" aria-expanded="false">Details <span aria-hidden="true">+</span></button></div>
+    </article><article class="project-card" data-category="Generative AI">
+      <div class="project-meta"><span class="project-index">03</span><span class="category">Generative AI</span></div>
+      <h3>AI-Based Residential Energy Efficiency Optimization</h3>
+      <p class="project-description">This project examines the role of generative AI in analyzing residential energy and environmental data and in making structured suggestions for energy efficiency. Household energy usage data are converted into samples that enable an AI model to provide tailored advice for each household.</p>
+      <div class="project-extra"><strong>Tools</strong><p>Python, Hugging Face Transformers, GPT-2, LoRA, PEFT, PyTorch, and Pandas.</p><strong>Outcome</strong><p>Successfully demonstrated the ability of AI to generate practical recommendations from residential energy data.</p></div>
+      <div class="project-bottom"><a class="project-link" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Residential_Energy_Efficiency" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a><button class="detail-toggle" type="button" aria-expanded="false">Details <span aria-hidden="true">+</span></button></div>
+    </article><article class="project-card" data-category="Analytics">
+      <div class="project-meta"><span class="project-index">04</span><span class="category">Analytics</span></div>
+      <h3>Netflix Top 10 Content &amp; Viewership Analysis</h3>
+      <p class="project-description">This project involves analyzing Netflix Top 10 data to understand trends in content popularity and audience behavior. The analysis includes popular content, the staying power of content within the Top 10 list, differences by country, early performance, and the correlation between duration and views.</p>
+      <div class="project-extra"><strong>Tools</strong><p>Python, Pandas, Jupyter Notebook, Matplotlib, Data Visualization, and PowerPoint.</p><strong>Outcome</strong><p>Insights from the data will help stakeholders make sense of audience preferences and content performance.</p></div>
+      <div class="project-bottom"><a class="project-link" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Netflix_Trend_Analysis" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a><button class="detail-toggle" type="button" aria-expanded="false">Details <span aria-hidden="true">+</span></button></div>
+    </article><article class="project-card" data-category="Forecasting">
+      <div class="project-meta"><span class="project-index">05</span><span class="category">Forecasting</span></div>
+      <h3>U.S. Retail Sales Forecasting Using Time-Series Analysis</h3>
+      <p class="project-description">This project performs a time-series analysis on historical U.S. retail sales data to gain insight into trends, seasonality, and dynamics. Historical behavior is studied using time-series analysis and applied to future forecasting.</p>
+      <div class="project-extra"><strong>Tools</strong><p>Python, Pandas, NumPy, Statsmodels, Matplotlib, and Jupyter Notebook.</p><strong>Outcome</strong><p>Insights gained from historical U.S. retail sales behavior and the application of trends toward future forecasting.</p></div>
+      <div class="project-bottom"><a class="project-link" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Retail_Sales_Forecasting" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a><button class="detail-toggle" type="button" aria-expanded="false">Details <span aria-hidden="true">+</span></button></div>
+    </article><article class="project-card" data-category="Recommender Systems">
+      <div class="project-meta"><span class="project-index">06</span><span class="category">Recommender Systems</span></div>
+      <h3>Hybrid Movie Recommendation System Using MovieLens</h3>
+      <p class="project-description">This project involves creating a movie recommendation system that allows the user to choose a preferred movie and receive recommendations for other movies they might like. The recommender uses movie ratings and other attributes to determine similarities.</p>
+      <div class="project-extra"><strong>Tools</strong><p>Python, Pandas, NumPy, Scikit-learn, TF-IDF, and Cosine Similarity.</p><strong>Outcome</strong><p>Developed a personalized recommendation system that assists users in finding movies through similarities.</p></div>
+      <div class="project-bottom"><a class="project-link" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/MovieLens_Recommendation" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a><button class="detail-toggle" type="button" aria-expanded="false">Details <span aria-hidden="true">+</span></button></div>
+    </article><article class="project-card" data-category="Operational Analytics">
+      <div class="project-meta"><span class="project-index">07</span><span class="category">Operational Analytics</span></div>
+      <h3>TSA Passenger Complaint &amp; Airport Operations Analysis</h3>
+      <p class="project-description">The main objective of this project is to analyze passenger complaint data for the TSA and identify trends in complaints over time and across locations. Data visualization methods are applied in the process.</p>
+      <div class="project-extra"><strong>Tools</strong><p>Python, Pandas, Jupyter Notebook, Matplotlib, Data Visualization, and PowerPoint.</p><strong>Outcome</strong><p>Identified passenger complaint patterns to help determine recurring passenger concerns.</p></div>
+      <div class="project-bottom"><a class="project-link" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/TSA_Passenger_Complaint_Analysis" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a><button class="detail-toggle" type="button" aria-expanded="false">Details <span aria-hidden="true">+</span></button></div>
+    </article><article class="project-card" data-category="Machine Learning">
+      <div class="project-meta"><span class="project-index">08</span><span class="category">Machine Learning</span></div>
+      <h3>Predicting Road Accident Severity Using Machine Learning</h3>
+      <p class="project-description">In this project, road accident data will be analyzed to identify patterns related to accident severity. The project explores available accident-related features and predicts patterns that lead to more severe outcomes.</p>
+      <div class="project-extra"><strong>Tools</strong><p>Python, Pandas, NumPy, Scikit-learn, and Matplotlib.</p><strong>Outcome</strong><p>Identify patterns associated with accident severity and provide insights to better understand road safety risks.</p></div>
+      <div class="project-bottom"><a class="project-link" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Road_Accident_Severity_Prediction" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a><button class="detail-toggle" type="button" aria-expanded="false">Details <span aria-hidden="true">+</span></button></div>
+    </article><article class="project-card" data-category="Deep Learning">
+      <div class="project-meta"><span class="project-index">09</span><span class="category">Deep Learning</span></div>
+      <h3>MNIST Image Classification Using CNN</h3>
+      <p class="project-description">A convolutional neural network (CNN) is used to classify handwritten digits from images. The neural network learns patterns in handwritten digits and classifies them as numbers from zero to nine.</p>
+      <div class="project-extra"><strong>Tools</strong><p>Python, TensorFlow, Keras, NumPy, Matplotlib, and Jupyter Notebook.</p><strong>Outcome</strong><p>Illustrated how deep learning may be used for image recognition by building a model that can recognize and classify handwritten digits.</p></div>
+      <div class="project-bottom"><a class="project-link" href="https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/MNIST_Image_Classification_CNN" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a><button class="detail-toggle" type="button" aria-expanded="false">Details <span aria-hidden="true">+</span></button></div>
+    </article><article class="project-card" data-category="Upcoming">
+      <div class="project-meta"><span class="project-index">10</span><span class="category">Upcoming</span></div>
+      <h3>Course Project – TBD</h3>
+      <p class="project-description">This portfolio project has not yet been selected. The project details will be added after the final course project is confirmed.</p>
+      <div class="project-extra"><strong>Tools</strong><p>To be determined.</p><strong>Outcome</strong><p>To be determined.</p></div>
+      <div class="project-bottom"><span class="pending">Project details forthcoming</span><button class="detail-toggle" type="button" aria-expanded="false">Details <span aria-hidden="true">+</span></button></div>
+    </article></div></div></section>
+<section class="section contact-section" id="contact"><div class="shell"><div class="section-label" style="color:#86d6e9">03 / Contact</div><h2>Let's connect.</h2><p>Open to conversations about business intelligence, analytics, data science and enterprise technology leadership.</p>
+<div class="contact-links"><a href="mailto:mkumarkodirajan@my365.bellevue.edu">Email me ↗</a><a href="https://github.com/Mathan-MS" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://mathan-ms.github.io/" target="_blank" rel="noopener noreferrer">Portfolio URL ↗</a></div></div></section></main>
+<footer class="footer"><div class="shell footer-inner"><span>© <span id="year"></span> Mathankumar Kumar Kodirajan</span><span>Built with GitHub Pages · Business intelligence & data science</span></div></footer>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+document.querySelectorAll('.detail-toggle').forEach(button=>button.addEventListener('click',()=>{const card=button.closest('.project-card');const expanded=card.classList.toggle('expanded');button.setAttribute('aria-expanded',String(expanded));button.innerHTML=expanded?'Less <span aria-hidden="true">−</span>':'Details <span aria-hidden="true">+</span>';}));
+document.querySelectorAll('.filter-btn').forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;let count=0;document.querySelectorAll('.filter-btn').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});document.querySelectorAll('.project-card').forEach(card=>{const visible=filter==='All'||card.dataset.category===filter;card.hidden=!visible;if(visible)count++;});document.getElementById('project-count').textContent=count+' '+(count===1?'entry':'entries');}));
+</script></body></html>
