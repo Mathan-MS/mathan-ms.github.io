@@ -8,8 +8,8 @@ This log records broken items corrected, files or folders renamed or reorganized
 
 **Status:** Reviewed
 
-- **Broken or corrected:** Updated README installation instructions, corrected machine-specific directory output, and improved notebook Markdown documentation and result interpretations.
-- **Renamed or reorganized:** Standardized project documentation and directory references. No confirmed file renames.
+- **Broken or corrected:** Updated README installation instructions, corrected directory output, and improved notebook Markdown and result interpretations.
+- **Renamed or reorganized:** None.
 - **Archived or removed:** None.
 
 ### 2. U.S. Childcare Affordability Analysis
