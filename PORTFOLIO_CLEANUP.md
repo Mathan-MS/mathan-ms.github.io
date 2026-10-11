@@ -6,11 +6,11 @@ This log records broken items corrected, files or folders renamed or reorganized
 
 ### 1. Telecom Customer Churn Prediction
 
-**Status:** Pending review
+**Status:** Reviewed
 
-- **Broken or corrected:** [To be documented]
-- **Renamed or reorganized:** [To be documented]
-- **Archived or removed:** [To be documented]
+- **Broken or corrected:** Updated README installation instructions, corrected machine-specific directory output, and improved notebook Markdown documentation and result interpretations.
+- **Renamed or reorganized:** Standardized project documentation and directory references. No confirmed file renames.
+- **Archived or removed:** None.
 
 ### 2. U.S. Childcare Affordability Analysis
 
