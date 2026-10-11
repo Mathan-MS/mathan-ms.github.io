@@ -14,11 +14,11 @@ This log records broken items corrected, files or folders renamed or reorganized
 
 ### 2. U.S. Childcare Affordability Analysis
 
-**Status:** Pending review
+**Status:** Reviewed
 
-- **Broken or corrected:** [To be documented]
-- **Renamed or reorganized:** [To be documented]
-- **Archived or removed:** [To be documented]
+- **Broken or corrected:** Improved notebook Markdown and chart interpretations, verified reported dataset counts against saved outputs, and updated the README with numerical findings and working repository installation instructions.
+- **Renamed or reorganized:** Standardized README references to the existing `data/`, `notebooks/`, `figures/`, and `results/` project folders; no file or folder renames confirmed during this review.
+- **Archived or removed:** Removed redundant portfolio and repository links and unnecessary dataset-download instructions from the README. No project files archived or removed.
 
 ### 3. AI-Based Residential Energy Efficiency Optimization
 
