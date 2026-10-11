@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project analyzes **12,316 road traffic accident records** from Addis Ababa, Ethiopia (2017–2020), using exploratory analysis, statistical association tests, and machine-learning models to classify accidents as **Slight Injury, Serious Injury, or Fatal Injury**. The original dataset contains 32 features. The goal is to understand which recorded characteristics are informative and how reliably models recognize the less frequent, more severe outcomes.
+This project analyzes **12,316 road traffic accident records** from Addis Ababa, Ethiopia (2017–2020), using exploratory analysis, statistical association tests, and machine-learning models to classify accidents as **Slight Injury, Serious Injury, or Fatal Injury**. The original dataset contains 32 columns, including the target variable. The goal is to understand which recorded characteristics are informative and how reliably models recognize the less frequent, more severe outcomes.
 
 ## Business Problem
 
@@ -20,7 +20,7 @@ Understanding patterns associated with accident severity can inform transportati
 
 - Source file: `RTA Dataset.csv`
 - Records: **12,316**
-- Original features: **32**
+- Original columns: **32 (including the target variable)**
 - Location and period: **Addis Ababa, Ethiopia, 2017–2020**
 - Target: **Accident_severity** (Slight Injury, Serious Injury, Fatal Injury)
 
@@ -74,30 +74,28 @@ The project demonstrates a reproducible analysis and model-comparison workflow w
 
 ## Installation / Running the Project
 
-The project is located in the `Projects/Road_Accident_Severity_Prediction` directory of the portfolio repository. Confirm the notebook, dataset, and dependency-file locations before running.
+The project is located in the `Projects/Road_Accident_Severity_Prediction` directory of the portfolio repository.
 
-1. Clone your repository:
+1. **Clone the repository and navigate to the project directory:**
 
    ```bash
    git clone https://github.com/Mathan-MS/mathan-ms.github.io.git
    cd mathan-ms.github.io/Projects/Road_Accident_Severity_Prediction
    ```
 
-2. Place `RTA Dataset.csv` in the location expected by the notebook, and update its dataset path if necessary.
-3. Install dependencies. If your repository includes a verified `requirements.txt`, run:
+2. **Obtain the dataset:** Download the Road Traffic Severity Classification dataset from [Kaggle](https://www.kaggle.com/datasets/avikumart/road-traffic-severity-classification). Ensure the file is named `RTA Dataset.csv` and place it where the notebook's dataset-loading code expects it. If necessary, update the path in the notebook to match your local setup.
+
+3. **Install the Python dependencies:** The analysis uses Python, Jupyter Notebook, pandas, NumPy, Matplotlib, seaborn, SciPy, scikit-learn, and XGBoost. Install these packages in your Python environment:
 
    ```bash
-   pip install -r requirements.txt
+   pip install notebook pandas numpy matplotlib seaborn scipy scikit-learn xgboost
    ```
 
-4. Start Jupyter:
+4. **Launch Jupyter Notebook:**
 
    ```bash
    jupyter notebook
    ```
 
-5. Open `Road_Accident_Severity_Prediction.ipynb` (or its actual path in your repository) and run the cells in order.
+5. **Run the analysis:** Open the road accident severity prediction notebook in the project directory and execute the cells sequentially. The notebook covers data preparation, exploratory analysis, statistical testing, model tuning and cross-validation, evaluation, feature importance, and subgroup analysis.
 
-**Repository folder:** https://github.com/Mathan-MS/mathan-ms.github.io/tree/main/Projects/Road_Accident_Severity_Prediction
-
-**Before publishing:** Confirm the notebook and CSV locations and ensure `requirements.txt` exists if you retain that installation command. The live GitHub folder contents could not be independently retrieved during this review.
