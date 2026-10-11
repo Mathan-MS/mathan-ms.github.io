@@ -95,4 +95,8 @@ The project is located in the `Projects/Road_Accident_Severity_Prediction` direc
    jupyter notebook
    ```
 
-4. **Run the analysis:** Open `Road_Accident_Severity_Prediction.ipynb` and execute the cells sequentially. The notebook uses the included `data/RTA Dataset.csv` file and covers data preparation, exploratory analysis, statistical testing, model tuning, cross-validation, evaluation, feature importance, and subgroup analysis.
+4. **Open and run the notebook:**
+
+   `notebooks/Road_Accident_Severity_Prediction.ipynb`
+
+   Execute all cells sequentially. The notebook reads the included dataset from `data/RTA Dataset.csv` and covers data preparation, exploratory analysis, statistical testing, model tuning, cross-validation, evaluation, feature importance, and subgroup analysis.
