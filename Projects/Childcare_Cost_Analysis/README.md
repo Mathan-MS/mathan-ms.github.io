@@ -18,9 +18,7 @@ The analysis addresses these questions:
 
 ## Dataset
 
-**Source:** National Database of Childcare Prices  
-**Input file:** `data/nationaldatabaseofchildcareprices.xlsx`  
-**Study period:** 2008–2018
+The project uses the National Database of Childcare Prices (`data/nationaldatabaseofchildcareprices.xlsx`), covering the years 2008–2018.
 
 The original dataset contains **34,567 records and 227 columns**, covering **51 states/jurisdictions** and **3,144 counties** as reported in the notebook. After selecting the analysis fields and removing records missing required numeric values, the cleaned dataset contains **23,342 records and 17 columns**.
 
@@ -88,23 +86,19 @@ git clone https://github.com/Mathan-MS/mathan-ms.github.io.git
 cd mathan-ms.github.io/Projects/Childcare_Cost_Analysis
 ```
 
-### Step 2: Check the Dataset
-
-The project uses `nationaldatabaseofchildcareprices.xlsx` in the `data/` directory. Confirm that the file is present before running the notebook; if it is not included in your checkout, obtain it from the original dataset source and place it at this path.
-
-### Step 3: Install Project Dependencies
+### Step 2: Install Project Dependencies
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-### Step 4: Launch Jupyter Notebook
+### Step 3: Launch Jupyter Notebook
 
 ```bash
 python -m notebook
 ```
 
-### Step 5: Open and Run the Notebook
+### Step 4: Open and Run the Notebook
 
 Open `notebooks/Childcare_Affordability_Analysis.ipynb`, select the appropriate Python kernel, and use **Restart Kernel and Run All Cells**. The notebook saves its figures in `figures/` and the cleaned dataset in `results/`.
 
