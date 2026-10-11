@@ -8,9 +8,9 @@ This log records broken items corrected, files or folders renamed or reorganized
 
 **Status:** Reviewed
 
-- **Broken or corrected:** Updated README installation instructions, corrected directory output, and improved notebook Markdown and result interpretations.
-- **Renamed or reorganized:** None.
-- **Archived or removed:** None.
+- **Broken or corrected:** Standardized notebook directory output to display relative folder names instead of local Windows paths. Updated README installation instructions and improved Markdown documentation and result interpretations.
+- **Renamed or reorganized:** Organized project files into the GitHub folder structure (`data/`, `notebooks/`, `figures/`, and `results/`) and standardized notebook references.
+- **Archived or removed:** None documented.
 
 ### 2. U.S. Childcare Affordability Analysis
 
@@ -65,7 +65,7 @@ This log records broken items corrected, files or folders renamed or reorganized
 **Status:** Reviewed
 
 - **Broken or corrected:** Clarified README setup and execution instructions. Verified that a separately downloaded project writes generated figures to the project-level `figures/` directory.
-- **Renamed or reorganized:** Files are organized under `data/`, `notebooks/`, `figures/`, and `results/`. No specific historical file rename has been confirmed.
+- **Renamed or reorganized:** Organized project files under `data/`, `notebooks/`, `figures/`, and `results/` to match the GitHub project structure.
 - **Archived or removed:** No archived or removed files documented.
 
 ### 9. MNIST Image Classification Using CNN
