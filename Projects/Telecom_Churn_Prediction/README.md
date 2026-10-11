@@ -82,7 +82,6 @@ The project is located in the `Projects/Telecom_Churn_Prediction` directory of t
 
 - **Python 3.11** (recommended, subject to dependency compatibility)
 - **Git** — Download from [git-scm.com](https://git-scm.com/downloads) if not already installed.
-- **Telco Customer Churn dataset** — Download from [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) if the CSV is not already included in the `data/` folder.
 
 ### Step 1: Clone the Repository
 
