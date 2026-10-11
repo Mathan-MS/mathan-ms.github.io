@@ -20,7 +20,7 @@ Understanding patterns associated with accident severity can inform transportati
 
 - Source file: `RTA Dataset.csv`
 - Records: **12,316**
-- Original columns: **32 (including the target variable)**
+- Original columns: **32 (including the target)**
 - Location and period: **Addis Ababa, Ethiopia, 2017–2020**
 - Target: **Accident_severity** (Slight Injury, Serious Injury, Fatal Injury)
 
@@ -74,29 +74,44 @@ The project demonstrates a reproducible analysis and model-comparison workflow w
 
 ## Installation / Running the Project
 
-The project is located in the `Projects/Road_Accident_Severity_Prediction` directory of the portfolio repository. The dataset is included in the `data/` folder, and dependencies are listed in `requirements.txt`.
+The project is located in the `Projects/Road_Accident_Severity_Prediction` directory of the portfolio repository. The dataset is included in the `data/` folder, and the required Python packages are listed in `requirements.txt`.
 
-1. **Clone the repository and navigate to the project directory:**
+### Prerequisites
 
-   ```bash
-   git clone https://github.com/Mathan-MS/mathan-ms.github.io.git
-   cd mathan-ms.github.io/Projects/Road_Accident_Severity_Prediction
-   ```
+- **Python 3.11** (recommended, subject to dependency compatibility)
+- **Git** — Download from [git-scm.com](https://git-scm.com/downloads) if not already installed.
 
-2. **Install the project dependencies:**
+### Step 1: Clone the Repository
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+Open Command Prompt or a terminal and run:
 
-3. **Launch Jupyter Notebook:**
+```bash
+git clone https://github.com/Mathan-MS/mathan-ms.github.io.git
+cd mathan-ms.github.io/Projects/Road_Accident_Severity_Prediction
+```
 
-   ```bash
-   jupyter notebook
-   ```
+### Step 2: Install Project Dependencies
 
-4. **Open and run the notebook:**
+From the project directory, run:
 
-   `notebooks/Road_Accident_Severity_Prediction.ipynb`
+```bash
+python -m pip install -r requirements.txt
+```
 
-   Execute all cells sequentially. The notebook reads the included dataset from `data/RTA Dataset.csv` and covers data preparation, exploratory analysis, statistical testing, model tuning, cross-validation, evaluation, feature importance, and subgroup analysis.
+### Step 3: Launch Jupyter Notebook
+
+```bash
+python -m notebook
+```
+
+### Step 4: Open and Run the Notebook
+
+In Jupyter Notebook, open:
+
+`notebooks/Road_Accident_Severity_Prediction.ipynb`
+
+Select **Kernel → Restart Kernel and Run All Cells** to execute the notebook sequentially.
+
+The notebook uses the included dataset (`data/RTA Dataset.csv`) and performs data preparation, exploratory analysis, statistical testing, model development, hyperparameter tuning, five-fold stratified cross-validation, model evaluation, feature importance analysis, and ethical subgroup analysis.
+
+**Note:** Execution time may vary depending on the computer's processing capabilities, particularly during hyperparameter tuning and cross-validation.
