@@ -74,7 +74,7 @@ The project demonstrates a reproducible analysis and model-comparison workflow w
 
 ## Installation / Running the Project
 
-The project is located in the `Projects/Road_Accident_Severity_Prediction` directory of the portfolio repository.
+The project is located in the `Projects/Road_Accident_Severity_Prediction` directory of the portfolio repository. The dataset is included in the `data/` folder, and dependencies are listed in `requirements.txt`.
 
 1. **Clone the repository and navigate to the project directory:**
 
@@ -83,19 +83,16 @@ The project is located in the `Projects/Road_Accident_Severity_Prediction` direc
    cd mathan-ms.github.io/Projects/Road_Accident_Severity_Prediction
    ```
 
-2. **Obtain the dataset:** Download the Road Traffic Severity Classification dataset from [Kaggle](https://www.kaggle.com/datasets/avikumart/road-traffic-severity-classification). Ensure the file is named `RTA Dataset.csv` and place it where the notebook's dataset-loading code expects it. If necessary, update the path in the notebook to match your local setup.
-
-3. **Install the Python dependencies:** The analysis uses Python, Jupyter Notebook, pandas, NumPy, Matplotlib, seaborn, SciPy, scikit-learn, and XGBoost. Install these packages in your Python environment:
+2. **Install the project dependencies:**
 
    ```bash
-   pip install notebook pandas numpy matplotlib seaborn scipy scikit-learn xgboost
+   pip install -r requirements.txt
    ```
 
-4. **Launch Jupyter Notebook:**
+3. **Launch Jupyter Notebook:**
 
    ```bash
    jupyter notebook
    ```
 
-5. **Run the analysis:** Open the road accident severity prediction notebook in the project directory and execute the cells sequentially. The notebook covers data preparation, exploratory analysis, statistical testing, model tuning and cross-validation, evaluation, feature importance, and subgroup analysis.
-
+4. **Run the analysis:** Open `Road_Accident_Severity_Prediction.ipynb` and execute the cells sequentially. The notebook uses the included `data/RTA Dataset.csv` file and covers data preparation, exploratory analysis, statistical testing, model tuning, cross-validation, evaluation, feature importance, and subgroup analysis.
