@@ -1,137 +1,110 @@
-# Telecom Customer Churn Prediction
+# Telecom Customer Churn Prediction Using Machine Learning
 
 ## Project Overview
 
-Customer churn is one of the major challenges for telecommunications companies because it can negatively affect revenue and increase customer acquisition costs. This project uses telecom customer data to identify factors associated with churn and applies machine learning models to predict customers who may leave.
-
-An end-to-end data science workflow is used to prepare the data, explore churn patterns, address class imbalance, train classification models, and compare model performance.
+This project analyzes the Telco Customer Churn dataset to explore customer characteristics associated with churn and compare three classification algorithms: **Logistic Regression, Random Forest, and XGBoost**. The workflow covers data cleaning, feature engineering, outlier handling, encoding, scaling, a stratified train/test split, training-only SMOTE, model evaluation, and interpretation of results.
 
 ## Business Problem
 
-Telecommunications companies serve customers with different services, contracts, and billing arrangements. Identifying customers who are at risk of churning can help support customer-retention efforts.
+Customer churn can reduce recurring revenue and increase the cost of acquiring replacement customers. Predicting churn risk may help telecommunications providers prioritize retention analysis and customer engagement. A prediction of churn risk does not, by itself, explain why a customer leaves or establish that an intervention will prevent churn.
 
-This project is aimed at accomplishing the following goals:
+## Research Questions
 
-- Identify features associated with customer churn.
-- Examine how services, contracts, and account characteristics relate to customer retention.
-- Build predictive models for customer churn.
-- Compare multiple classification models.
+1. Which customer account, service, contract, and billing characteristics are associated with churn?
+2. How do Logistic Regression, Random Forest, and XGBoost compare in identifying customers who churn?
+3. What trade-offs exist among recall, precision, F1-score, accuracy, and ROC-AUC for retention-oriented decisions?
 
 ## Dataset
 
-The project uses the Telco Customer Churn dataset, which contains 7,043 customer records and 21 variables.
+- **Source:** [Telco Customer Churn dataset on Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+- **Original records:** 7,043
+- **Original columns:** 21, including the target
+- **Target:** `Churn` (binary: Yes/No)
+- **Example predictors:** `tenure`, `Contract`, `InternetService`, `OnlineSecurity`, `TechSupport`, `PaymentMethod`, `MonthlyCharges`, and `TotalCharges`
 
-The dataset includes customer demographics, account information, subscribed services, billing information, and churn status.
-
-**Dataset Source:** https://www.kaggle.com/datasets/blastchar/telco-customer-churn
-
-Key variables include:
-
-- Tenure
-- Contract Type
-- Internet Service
-- Online Security
-- Tech Support
-- Payment Method
-- Monthly Charges
-- Total Charges
-- Churn
-
-The target variable is `Churn`, which indicates whether a customer discontinued service.
+The notebook searches for `Telco-Customer-Churn.csv` or `WA_Fn-UseC_-Telco-Customer-Churn.csv` in `data/`, or uses the sole CSV in that directory if only one exists. The dataset must be placed there before running the notebook.
 
 ## Tools & Technologies
 
-- Python
-- Jupyter Notebook
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- Imbalanced-learn
-- XGBoost
+Python, Jupyter Notebook, pandas, NumPy, Matplotlib, seaborn, scikit-learn, imbalanced-learn (SMOTE), and XGBoost.
 
 ## Project Workflow
 
-The project follows these main steps:
+1. **Data review and cleaning:** Inspect the dataset, remove the customer identifier, convert `TotalCharges` to numeric, and fill missing values using the median.
+2. **Feature engineering:** Add log-transformed charge variables and tenure groupings.
+3. **Outlier handling:** Apply IQR-based clipping to selected charge variables.
+4. **Encoding and scaling:** Convert categorical variables to indicator columns and scale numeric predictors.
+5. **Train/test split and class balancing:** Create a stratified 80/20 split; apply SMOTE only to the training partition.
+6. **Model development:** Fit Logistic Regression, Random Forest, and XGBoost.
+7. **Evaluation and interpretation:** Review classification reports, confusion matrices, ROC curves, predicted-probability visualizations, and feature importance outputs.
 
-1. **Data Cleaning and Preparation**
-   - Reviewed the dataset for missing or incorrect values.
-   - Converted variables to appropriate data types.
-   - Prepared categorical and numeric features.
+## Model Evaluation and Selection
 
-2. **Exploratory Data Analysis**
-   - Examined customer characteristics and churn patterns.
-   - Analyzed relationships between churn and tenure, contract type, services, and charges.
-   - Used visualizations to identify trends.
+The saved test set contains **1,409 customers**, including **374 churners**. The training partition contains **5,634 records before SMOTE** and **8,278 after SMOTE**. The metrics below are from the executed notebook; precision, recall, and F1-score refer to the churn class.
 
-3. **Feature Engineering**
-   - Converted categorical variables into numeric form.
-   - Split the data into training and testing sets.
+| Model | Accuracy | Churn precision | Churn recall | Churn F1 | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | 0.7559 | 0.5281 | **0.7540** | **0.6211** | **0.8415** |
+| Random Forest | **0.7637** | **0.5469** | 0.6390 | 0.5894 | 0.8255 |
+| XGBoost | 0.7630 | 0.5395 | 0.7299 | 0.6205 | 0.8358 |
 
-4. **Class Imbalance Handling**
-   - Applied SMOTE to the training data.
-   - Kept the test data separate for final evaluation.
-
-5. **Model Development**
-   - Logistic Regression
-   - Random Forest
-   - XGBoost
-
-6. **Model Evaluation**
-   - Compared the classification models using multiple evaluation metrics.
-
-## Model Evaluation
-
-The models were evaluated using:
-
-- Accuracy
-- Precision
-- Recall
-- F1-Score
-- ROC-AUC
-- Confusion Matrix
-
-Particular emphasis was placed on recall for churned customers because failing to identify customers who are likely to leave may result in missed retention opportunities.
+**Logistic Regression** is the strongest candidate when churn detection is the main priority: it has the highest churn recall, F1-score, and ROC-AUC in this test run. **Random Forest** has the highest overall accuracy and churn precision. These are results from one test split, not proof of universal model superiority.
 
 ## Key Findings
 
-The analysis showed that churn behavior is related to several customer and account characteristics.
+- Logistic Regression identified approximately **75.4%** of churners in the test set, with churn precision of **52.81%**.
+- XGBoost achieved churn recall of **72.99%**, close to Logistic Regression, while Random Forest achieved **63.90%**.
+- Tenure, contract type, charges, and service-related characteristics appeared among the factors associated with churn in the analysis.
+- The Random Forest importance ranking highlighted `tenure` (0.1232), `TotalCharges_log` (0.1066), and `TotalCharges` (0.1028).
+- The XGBoost importance ranking highlighted `Contract_Two year` (0.3028), `OnlineSecurity_No internet service` (0.1572), and `Contract_One year` (0.1116).
 
-Key findings include:
+Feature importance reflects model behavior and should not be interpreted as a causal effect.
 
-- Customer tenure was an important factor in understanding churn behavior.
-- Contract type was related to customer retention behavior.
-- Monthly charges and subscribed services were associated with churn.
-- Service-related variables such as internet service, online security, and technical support provided useful insight into churn behavior.
+## Limitations and Responsible Use
 
-## Outcome
+- The dataset is a demonstration dataset and may not represent other telecom providers or customer populations.
+- In the existing notebook, some imputation, outlier thresholds, and scaling are calculated before the train/test split. This may introduce information leakage; reported scores should therefore be treated as illustrative rather than strictly independent holdout estimates.
+- The comparison uses a single test split without cross-validated model selection or external validation.
+- Predictions may be wrong. False negatives can miss customers who churn, while false positives can lead to unnecessary outreach.
+- Customer information should be handled with appropriate privacy safeguards, and retention strategies should be assessed for fairness and customer impact.
 
-This project demonstrates how customer data and machine learning can be used to identify customers who may be at risk of churning.
+## Conclusion and Recommendations
 
-The findings can help telecommunications companies better understand customer behavior and support customer-retention strategies.
+The project demonstrates how customer and account data can support churn-risk analysis. In the executed comparison, Logistic Regression achieved the highest churn recall (**0.7540**), F1-score (**0.6211**), and ROC-AUC (**0.8415**), making it a promising candidate for prioritizing potential churners. Random Forest had slightly higher accuracy (**0.7637**), reinforcing that the best metric depends on the business objective.
+
+Telecommunications providers could use these insights to investigate churn patterns and prioritize customer engagement. Before operational use, the model would require further validation on new customer data and an assessment of retention-intervention outcomes, privacy, and fairness.
 
 ## Installation / Running the Project
 
-1. Clone the repository:
+The project is intended to be stored at `Projects/Telecom_Churn_Prediction` in the portfolio repository, with the notebook in `notebooks/` and the CSV dataset in `data/`. The notebook creates `figures/` and `results/` if they do not exist.
+
+### Prerequisites
+
+- Python with the packages listed in `requirements.txt`
+- Git
+- The Telco Customer Churn CSV dataset, placed in `data/`
+
+### Step 1: Clone the Repository
 
 ```bash
-git clone <repo_url>
-cd <repository_name>
+git clone https://github.com/Mathan-MS/mathan-ms.github.io.git
+cd mathan-ms.github.io/Projects/Telecom_Churn_Prediction
 ```
 
-2. Install the required packages:
+### Step 2: Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-3. Launch Jupyter Notebook:
+### Step 3: Launch Jupyter Notebook
 
 ```bash
-jupyter notebook
+python -m notebook
 ```
 
-4. Open and run:
+### Step 4: Open and Run the Notebook
 
-`notebooks/Telecom_Churn_Prediction.ipynb`
+Open `notebooks/Telecom_Churn_Prediction.ipynb` and select **Kernel → Restart Kernel and Run All Cells**.
+
+The notebook saves model diagnostic figures to `figures/` and comparison/feature-importance CSVs to `results/`. Running the notebook may take time depending on the environment.
