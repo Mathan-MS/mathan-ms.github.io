@@ -76,22 +76,26 @@ Telecommunications providers could use these insights to investigate churn patte
 
 ## Installation / Running the Project
 
-The project is intended to be stored at `Projects/Telecom_Churn_Prediction` in the portfolio repository, with the notebook in `notebooks/` and the CSV dataset in `data/`. The notebook creates `figures/` and `results/` if they do not exist.
+The project is located in the `Projects/Telecom_Churn_Prediction` directory of the portfolio repository. The dataset should be placed in the `data/` folder, and the required Python packages are listed in `requirements.txt`.
 
 ### Prerequisites
 
-- Python with the packages listed in `requirements.txt`
-- Git
-- The Telco Customer Churn CSV dataset, placed in `data/`
+- **Python 3.11** (recommended, subject to dependency compatibility)
+- **Git** — Download from [git-scm.com](https://git-scm.com/downloads) if not already installed.
+- **Telco Customer Churn dataset** — Download from [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) if the CSV is not already included in the `data/` folder.
 
 ### Step 1: Clone the Repository
+
+Open Command Prompt or a terminal and run:
 
 ```bash
 git clone https://github.com/Mathan-MS/mathan-ms.github.io.git
 cd mathan-ms.github.io/Projects/Telecom_Churn_Prediction
 ```
 
-### Step 2: Install Dependencies
+### Step 2: Install Project Dependencies
+
+From the project directory, run:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -105,6 +109,12 @@ python -m notebook
 
 ### Step 4: Open and Run the Notebook
 
-Open `notebooks/Telecom_Churn_Prediction.ipynb` and select **Kernel → Restart Kernel and Run All Cells**.
+In Jupyter Notebook, open:
 
-The notebook saves model diagnostic figures to `figures/` and comparison/feature-importance CSVs to `results/`. Running the notebook may take time depending on the environment.
+`notebooks/Telecom_Churn_Prediction.ipynb`
+
+Select **Kernel → Restart Kernel and Run All Cells** to execute the notebook sequentially.
+
+The notebook reads the churn dataset from `data/` (recognizing `Telco-Customer-Churn.csv` or `WA_Fn-UseC_-Telco-Customer-Churn.csv`, or a single CSV in that folder). It performs data preparation, exploratory analysis, feature engineering, class-imbalance handling with SMOTE, model training and evaluation for Logistic Regression, Random Forest, and XGBoost, and feature-importance analysis. It saves generated figures to `figures/` and results files to `results/`.
+
+**Note:** Execution time may vary depending on the computer's processing capabilities.
