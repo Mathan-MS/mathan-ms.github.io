@@ -22,11 +22,11 @@ This log records broken items corrected, files or folders renamed or reorganized
 
 ### 3. AI-Based Residential Energy Efficiency Optimization
 
-**Status:** Pending review
+**Status:** Reviewed
 
-- **Broken or corrected:** [To be documented]
-- **Renamed or reorganized:** [To be documented]
-- **Archived or removed:** [To be documented]
+- **Broken or corrected:** Expanded notebook Markdown interpretations and verified reported training and evaluation figures against saved outputs. Updated the README with specific results, installation instructions, and the current notebook filename.
+- **Renamed or reorganized:** Renamed the notebook from `Energy_Efficiency_Optimization.ipynb` to `Residential_Energy_Efficiency.ipynb` and updated its README reference.
+- **Archived or removed:** None documented.
 
 ### 4. Netflix Top 10 Content & Viewership Analysis
 

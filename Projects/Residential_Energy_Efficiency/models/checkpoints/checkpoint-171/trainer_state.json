@@ -25,9 +25,9 @@
     {
       "epoch": 0.991304347826087,
       "eval_loss": 0.9946805834770203,
-      "eval_runtime": 9.0033,
-      "eval_samples_per_second": 5.665,
-      "eval_steps_per_second": 1.444,
+      "eval_runtime": 10.2713,
+      "eval_samples_per_second": 4.965,
+      "eval_steps_per_second": 1.266,
       "step": 57
     },
     {
@@ -47,9 +47,9 @@
     {
       "epoch": 2.0,
       "eval_loss": 0.31993693113327026,
-      "eval_runtime": 10.7849,
-      "eval_samples_per_second": 4.729,
-      "eval_steps_per_second": 1.205,
+      "eval_runtime": 10.0527,
+      "eval_samples_per_second": 5.073,
+      "eval_steps_per_second": 1.293,
       "step": 115
     },
     {
@@ -69,9 +69,9 @@
     {
       "epoch": 2.973913043478261,
       "eval_loss": 0.21638000011444092,
-      "eval_runtime": 7.5745,
-      "eval_samples_per_second": 6.733,
-      "eval_steps_per_second": 1.716,
+      "eval_runtime": 8.6185,
+      "eval_samples_per_second": 5.917,
+      "eval_steps_per_second": 1.508,
       "step": 171
     }
   ],
