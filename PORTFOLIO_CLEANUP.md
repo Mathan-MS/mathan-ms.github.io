@@ -30,11 +30,11 @@ This log records broken items corrected, files or folders renamed or reorganized
 
 ### 4. Netflix Top 10 Content & Viewership Analysis
 
-**Status:** Pending review
+**Status:** Reviewed
 
-- **Broken or corrected:** [To be documented]
-- **Renamed or reorganized:** [To be documented]
-- **Archived or removed:** [To be documented]
+- **Broken or corrected:** Updated notebook Markdown so interpretations follow the corresponding dataset previews and charts; corrected the runtime chart axis from minutes to hours and replaced displayed local Windows paths with relative folder names. Updated the README with findings and working GitHub installation instructions.
+- **Renamed or reorganized:** Confirmed README references to the existing `data/`, `notebooks/`, and `figures/` folders and `Netflix_Viewership_Analysis.ipynb`; no file or folder renames documented.
+- **Archived or removed:** Removed duplicate and repetitive limitation statements and outdated path commentary from notebook Markdown. No project files archived or removed.
 
 ### 5. U.S. Retail Sales Forecasting Using Time-Series Analysis
 

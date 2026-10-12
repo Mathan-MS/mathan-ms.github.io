@@ -81,15 +81,12 @@ The analysis includes:
 
 ## Key Findings
 
-The analysis showed that Netflix performance varies across titles, countries, and time.
-
-Key findings include:
-
-- A relatively small number of titles generate very high global viewership.
-- Some titles remain in the Top 10 for much longer than others.
-- Content variety differs across countries.
-- Strong early viewership is concentrated among a small number of titles.
-- Runtime alone does not show a clear relationship with early viewership.
+- **Global viewership:** *Leave the World Behind* and *Extraction 2* are among the titles with the highest aggregated reported weekly views in the global Top 10 data.
+- **Top 10 longevity:** *Yo Soy Betty, la fea* and *Manifest* stand out for sustained appearances in the global Top 10.
+- **Ranking distribution:** The country-level ranking records fall into three bands: **30%** in ranks 1–3, **40%** in ranks 4–7, and **30%** in ranks 8–10. The middle band covers four positions, while the other bands cover three each.
+- **Country-level variety:** Trinidad and Tobago, Canada, and New Zealand are among the countries with the most distinct titles appearing in the country-level Top 10 data.
+- **First 91-day performance:** *Squid Game* and *Wednesday* feature among the strongest early-viewership titles. The source data also reports **230.9 million first-91-day views** for *Red Notice*.
+- **Runtime and viewership:** The scatterplot shows high-viewership titles across different runtimes, without a clear linear pattern.
 
 ## Outcome
 
@@ -99,27 +96,36 @@ The findings can support content planning, promotion, audience engagement, and i
 
 ## Installation / Running the Project
 
-1. Clone the repository:
+### Prerequisites
+
+- **Python 3.11** (recommended, subject to dependency compatibility)
+- **Git** — [Download Git](https://git-scm.com/downloads) if it is not installed.
+
+### Step 1: Clone the Repository
 
 ```bash
-git clone <repo_url>
-cd <repository_name>
+git clone https://github.com/Mathan-MS/mathan-ms.github.io.git
+cd mathan-ms.github.io/Projects/Netflix_Trend_Analysis
 ```
 
-2. Place the three Excel datasets in the `data/` folder.
-
-3. Install the required packages:
+### Step 2: Install Project Dependencies
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-4. Launch Jupyter Notebook:
+The three Excel datasets are included in the project's `data/` folder.
+
+### Step 3: Launch Jupyter Notebook
 
 ```bash
-jupyter notebook
+python -m notebook
 ```
 
-5. Open and run:
+### Step 4: Open and Run the Notebook
 
-`notebooks/Netflix_Viewership_Analysis.ipynb`
+Open `notebooks/Netflix_Viewership_Analysis.ipynb`, select the appropriate Python kernel, and choose **Kernel → Restart Kernel and Run All Cells**.
+
+The notebook generates six `.jpg` visualizations in `figures/`.
+
+**Note:** Execution time may vary depending on the system's hardware and available resources.
