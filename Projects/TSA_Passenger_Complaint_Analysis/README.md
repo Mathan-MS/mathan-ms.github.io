@@ -1,34 +1,30 @@
-# TSA Complaints Analysis
+# TSA Passenger Complaint & Airport Operations Analysis
 
 ## Project Overview
 
-This project analyzes Transportation Security Administration (TSA) complaint data across U.S. airports.
-
-The analysis examines complaint activity over time, complaint subcategories, complaint distributions at major airports, geographic complaint patterns, complaint-category rankings, and airport distribution by region.
+This project analyzes Transportation Security Administration (TSA) passenger complaint records to examine changes over time, identify leading complaint categories and subcategories, compare major airports, and visualize geographic patterns. Six visualizations summarize complaint volumes and the coverage of an airport reference dataset.
 
 ## Business Problem
 
-Understanding when and where passenger complaints occur can help identify areas of concern within airport security operations and passenger service.
+Airport and security operations teams need to understand when and where passenger concerns are reported and which types of complaints account for the largest workloads. This project aims to:
 
-This project is aimed at accomplishing the following goals:
-
-- Analyze complaint volume by month and year.
-- Identify major complaint subcategories.
-- Compare complaint distributions across major airports.
-- Examine the geographic distribution of complaints.
-- Rank major complaint categories.
-- Compare airport distribution across regions.
+- Examine monthly and annual complaint trends.
+- Identify leading complaint subcategories and categories.
+- Compare the distribution and variability of complaints at major airports.
+- Map airports with high recorded complaint volumes.
+- Assess geographic coverage of the airport reference data.
+- Identify areas for further operational investigation without treating raw complaint counts as passenger-adjusted performance measures.
 
 ## Dataset
 
-The project uses four TSA-related CSV files:
+Four CSV files are included in the project's `data/` folder:
 
-- `complaints-by-airport.csv`
-- `complaints-by-category.csv`
-- `complaints-by-subcategory.csv`
-- `iata-icao.csv`
+- `complaints-by-airport.csv` — airport-level complaint counts over time.
+- `complaints-by-category.csv` — complaint counts grouped by broad category.
+- `complaints-by-subcategory.csv` — complaint counts grouped by more detailed subcategory.
+- `iata-icao.csv` — airport-code and location reference data, including international airports.
 
-The complaint datasets contain complaint counts by airport, category, and subcategory. The airport reference dataset provides airport codes, geographic coordinates, and regional information.
+The complaint records span **2015 through January 2024**. **Only January is available for 2024**, so its count is not comparable with complete years. Category and subcategory data describe different groupings of complaint activity and should not be summed together.
 
 ## Tools & Technologies
 
@@ -40,85 +36,87 @@ The complaint datasets contain complaint counts by airport, category, and subcat
 
 ## Project Workflow
 
-The project follows these main steps:
-
 1. **Data Loading**
-   - Loaded the complaint and airport reference datasets.
-
+   - Loaded the three complaint datasets and the airport reference file.
 2. **Data Cleaning and Preparation**
-   - Standardized column names.
-   - Converted date fields.
-   - Created year and month variables.
-   - Removed missing or blank airport codes.
-   - Standardized airport-code formatting.
-   - Replaced missing complaint counts with zero.
-
-3. **Time-Based Complaint Analysis**
-   - Analyzed complaint activity by month and year.
-
-4. **Complaint Subcategory Analysis**
-   - Identified the most common complaint subcategories and their trends.
-
+   - Standardized field names and airport codes, converted dates, derived year/month fields, and handled missing complaint counts.
+3. **Monthly and Annual Analysis**
+   - Created a heatmap of recorded complaints by month and year.
+4. **Subcategory Trends**
+   - Examined monthly trends for the five leading complaint subcategories.
 5. **Airport-Level Analysis**
-   - Compared complaint distributions across major airports.
-
+   - Compared the monthly complaint distributions of the ten highest-total airports.
 6. **Geographic Analysis**
-   - Combined complaint data with airport coordinates.
-
-7. **Complaint Category and Regional Analysis**
-   - Ranked complaint categories.
-   - Compared airport distribution across regions.
+   - Matched airport complaint records to geographic coordinates and mapped the 50 highest-total matched airports.
+7. **Category Ranking and Reference Coverage**
+   - Ranked the ten leading complaint categories and summarized airport entries by region in the international reference file.
 
 ## Visualizations
 
-The analysis includes:
+The notebook generates six `.jpg` charts in `figures/`:
 
-- Complaint activity by month and year
-- Complaint trends by subcategory over time
-- Monthly complaint distribution across top airports
-- Spatial distribution of TSA complaints by airport
-- Complaint category ranking
-- Airport distribution by region
+- Monthly and annual TSA complaint heatmap.
+- Leading complaint subcategories over time.
+- Monthly complaint distributions across the top ten airports.
+- Geographic distribution of complaints at matched airports.
+- Top ten complaint categories.
+- Regional distribution of airport entries in the international IATA/ICAO reference file.
+
+Each chart is followed by a detailed interpretation in the notebook.
 
 ## Key Findings
 
-The analysis identified several major patterns:
-
-- TSA complaints fell sharply in 2020 and increased strongly beginning in 2022.
-- Expedited Passenger Screening Program complaints account for a large share of complaint activity.
-- Major airports such as JFK and LAX show relatively high complaint levels and greater variability.
-- Complaint activity is concentrated around major metropolitan airports.
-- Airport distribution differs significantly across regions.
+- **Annual complaint trend:** Airport-level complaints declined from **112,610 in 2019** to **45,326 in 2020**, a decrease of approximately **59.7%**. They subsequently increased to **172,729 in 2023**. The 2024 data covers January only.
+- **Leading complaint category:** **Expedited Passenger Screening Program** accounts for **569,943 of 1,021,281 category-level complaints**, approximately **55.8%**.
+- **Leading subcategories:** **Expedited Passenger Screening Program (380,103)** and **Expedited Passenger Screening Program – TSA PreCheck (141,096)** are the two largest subcategory labels. They remain separate labels in the source data.
+- **Airports with the highest recorded totals:** **Los Angeles (LAX): 24,794**, **New York JFK: 24,677**, and **Newark (EWR): 24,405**. These are absolute counts, not passenger-adjusted complaint rates.
+- **Geographic pattern:** Larger cumulative complaint totals appear at major metropolitan airports. The map includes only airports successfully matched to geographic coordinates.
+- **Reference-data coverage:** The regional chart counts airports in the **international** IATA/ICAO reference dataset, not TSA complaints by U.S. state. Alaska (331 entries) and Queensland (213 entries) are among its leading regions.
 
 ## Outcome
 
-This project provides a structured view of TSA complaint patterns across time, complaint types, airports, and regions.
+The analysis identifies periods, complaint types, and airports that warrant further review. The prominence of expedited-screening complaints suggests a useful area for targeted investigation, while the variation across airports and months can help guide workload monitoring.
 
-The findings can support further analysis of airport service quality, passenger experience, and security operations.
+A recommended next step is to combine complaint totals with passenger-screening volumes to calculate **complaints per million screened passengers**. This would support fairer comparisons across airports and time periods.
+
+### Limitations
+
+- Raw complaint totals do not account for differences in passenger traffic or establish airport service quality.
+- The available 2024 complaint data covers January only.
+- Category and subcategory files represent alternative classifications and must not be added together.
+- The airport map excludes records without matched coordinates; the regional chart describes an international reference file rather than TSA complaint locations.
+- The analysis is descriptive and does not establish causes of complaints.
 
 ## Installation / Running the Project
 
-1. Clone the repository:
+### Prerequisites
+
+- Python 3.11 (recommended, subject to dependency compatibility)
+- Git
+
+### Step 1: Clone the Repository
 
 ```bash
-git clone <repo_url>
-cd <repository_name>
+git clone https://github.com/Mathan-MS/mathan-ms.github.io.git
+cd mathan-ms.github.io/Projects/TSA_Passenger_Complaint_Analysis
 ```
 
-2. Place the four CSV files in the `data/` folder.
-
-3. Install the required packages:
+### Step 2: Install Project Dependencies
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-4. Launch Jupyter Notebook:
+The four CSV files are included in the project's `data/` folder.
+
+### Step 3: Launch Jupyter Notebook
 
 ```bash
-jupyter notebook
+python -m notebook
 ```
 
-5. Open and run:
+### Step 4: Open and Run the Notebook
 
-`notebooks/TSA_Complaints_Analysis.ipynb`
+Open `notebooks/TSA_Passenger_Complaint_Analysis.ipynb`, select the appropriate Python kernel, and choose **Kernel → Restart Kernel and Run All Cells**.
+
+The notebook saves six `.jpg` visualizations to `figures/`. Execution time may vary depending on the system's hardware and available resources.

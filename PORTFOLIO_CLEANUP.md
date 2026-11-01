@@ -1,6 +1,6 @@
 # Portfolio Cleanup Log
 
-This log records broken items corrected, files or folders renamed or reorganized, and materials archived or removed. Projects follow the order shown on the portfolio website. Pending entries have not yet been reviewed.
+This log records broken items corrected, files or folders renamed or reorganized, and materials archived or removed. Projects follow the order shown on the portfolio website. The nine existing projects have been reviewed; Project 10 remains a placeholder.
 
 ## Project Cleanup Entries
 
@@ -38,27 +38,27 @@ This log records broken items corrected, files or folders renamed or reorganized
 
 ### 5. U.S. Retail Sales Forecasting Using Time-Series Analysis
 
-**Status:** Pending review
+**Status:** Reviewed
 
-- **Broken or corrected:** [To be documented]
-- **Renamed or reorganized:** [To be documented]
-- **Archived or removed:** [To be documented]
+- **Broken or corrected:** Corrected notebook data preparation to exclude six unavailable July–December 2021 observations; expanded interpretations after results and charts. Reviewed the executed 12-month SARIMA forecast and updated the README with the reported RMSE (59,819.07), findings, and working installation instructions.
+- **Renamed or reorganized:** Standardized the project folder as `Retail_Sales_Forecasting` and the notebook as `Retail_Sales_Forecasting.ipynb`; aligned the README notebook path with `notebooks/Retail_Sales_Forecasting.ipynb`.
+- **Archived or removed:** No source dataset files archived or removed; the original CSV was retained.
 
 ### 6. Hybrid Movie Recommendation System Using MovieLens
 
-**Status:** Pending review
+**Status:** Reviewed
 
-- **Broken or corrected:** [To be documented]
-- **Renamed or reorganized:** [To be documented]
-- **Archived or removed:** [To be documented]
+- **Broken or corrected:** Added detailed interpretations after recommendation and similarity outputs; corrected an outdated interactive-test interpretation to describe the latest *Toy Story 2* run. Updated the README with the 70% collaborative / 30% content-based approach, verified examples, and repository installation instructions. Confirmed the existing dependency list includes `fuzzywuzzy` and `tabulate`.
+- **Renamed or reorganized:** Retained the project folder `Movie_Recommender_System` and notebook `Movie_Recommender_System.ipynb`; aligned README paths accordingly.
+- **Archived or removed:** None documented.
 
 ### 7. TSA Passenger Complaint & Airport Operations Analysis
 
-**Status:** Pending review
+**Status:** Reviewed
 
-- **Broken or corrected:** [To be documented]
-- **Renamed or reorganized:** [To be documented]
-- **Archived or removed:** [To be documented]
+- **Broken or corrected:** Expanded interpretations immediately after six chart outputs and updated the README with numerical findings and setup instructions. Clarified that 2024 complaint coverage is incomplete and that the airport reference file includes international airports, so its regional distribution must not be interpreted as U.S.-only TSA complaint activity. Preserved the existing Python code.
+- **Renamed or reorganized:** Used `TSA_Passenger_Complaint_Analysis` in the README installation path; the final local folder name should be checked against the repository before publishing.
+- **Archived or removed:** None documented.
 
 ### 8. Predicting Road Accident Severity Using Machine Learning
 
@@ -70,22 +70,23 @@ This log records broken items corrected, files or folders renamed or reorganized
 
 ### 9. MNIST Image Classification Using CNN
 
-**Status:** Pending review
+**Status:** Reviewed
 
-- **Broken or corrected:** [To be documented]
-- **Renamed or reorganized:** [To be documented]
-- **Archived or removed:** [To be documented]
+- **Broken or corrected:** Expanded interpretations after model training, evaluation, and confusion-matrix outputs. After rerunning, corrected stale training, validation, test-loss, and classification-error figures to match the latest saved results (99.00% test accuracy; 0.0309 test loss). Updated the README with verified findings, generated outputs, and installation instructions; Python code was preserved.
+- **Renamed or reorganized:** Standardized README references to `notebooks/MNIST_Image_Classification_CNN.ipynb` within `MNIST_Image_Classification_CNN`.
+- **Archived or removed:** None documented.
 
 ### 10. Course Project – TBD
 
-**Status:** Pending review
+**Status:** Not yet available for review
 
-- **Broken or corrected:** [To be documented]
-- **Renamed or reorganized:** [To be documented]
-- **Archived or removed:** [To be documented]
+- **Broken or corrected:** None documented.
+- **Renamed or reorganized:** None documented.
+- **Archived or removed:** None documented.
 
 ## Notes
 
 - Record only confirmed changes; write **None** if no changes occurred.
 - Use the individual project README for details that need more explanation.
 - Project 10 is currently listed as **Course Project – TBD** on the portfolio website.
+- Confirm the final TSA project folder name and that all revised files are committed to GitHub before considering the repository-wide cleanup complete.
