@@ -1,6 +1,6 @@
 # Portfolio Cleanup Log
 
-This log records broken items corrected, files or folders renamed or reorganized, and materials archived or removed. Projects follow the order shown on the portfolio website. The nine existing projects have been reviewed; Project 10 remains a placeholder.
+This log records broken items corrected, files or folders renamed or reorganized, and materials archived or removed. Projects follow the order shown on the portfolio website. All ten portfolio projects have been reviewed. Project 10 is Employee Attrition Prediction Using Machine Learning.
 
 ## Project Cleanup Entries
 
@@ -76,17 +76,17 @@ This log records broken items corrected, files or folders renamed or reorganized
 - **Renamed or reorganized:** Standardized README references to `notebooks/MNIST_Image_Classification_CNN.ipynb` within `MNIST_Image_Classification_CNN`.
 - **Archived or removed:** None documented.
 
-### 10. Course Project – TBD
+### 10. Employee Attrition Prediction Using Machine Learning
 
-**Status:** Not yet available for review
+**Status:** README reviewed; repository cleanup changes not independently verified
 
-- **Broken or corrected:** None documented.
-- **Renamed or reorganized:** None documented.
-- **Archived or removed:** None documented.
+- **Broken or corrected:** Replaced the placeholder Project 10 card in the portfolio website with the documented employee attrition project, including the dataset, model comparison, held-out results, and limitations. No notebook code fixes are confirmed by the supplied files.
+- **Renamed or reorganized:** Updated the website repository link to `Projects/Employee-Attrition-Prediction`, matching the README installation path. No actual repository folder renames are confirmed.
+- **Archived or removed:** Removed the Project 10 placeholder text from the website. No project files are confirmed archived or removed.
 
 ## Notes
 
 - Record only confirmed changes; write **None** if no changes occurred.
 - Use the individual project README for details that need more explanation.
-- Project 10 is currently listed as **Course Project – TBD** on the portfolio website.
-- Confirm the final TSA project folder name and that all revised files are committed to GitHub before considering the repository-wide cleanup complete.
+- Project 10 is now listed as **Employee Attrition Prediction Using Machine Learning** on the updated portfolio website.
+- Confirm the final TSA project folder name, verify the Project 10 folder and dataset placement, and ensure all revised files are committed to GitHub before considering the repository-wide cleanup complete.

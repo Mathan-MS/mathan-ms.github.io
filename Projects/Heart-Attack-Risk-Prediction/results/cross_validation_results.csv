@@ -1,9 +1,0 @@
-Model,CV Macro F1
-XGBoost | Balanced,0.42351306160564556
-Decision Tree | Unbalanced,0.35890545724148165
-Decision Tree | Balanced,0.3364579645502846
-XGBoost | Unbalanced,0.33276214406538224
-Random Forest | Balanced,0.3205434480230564
-Random Forest | Unbalanced,0.3084165008799897
-Logistic Regression | Unbalanced,0.3078221141113253
-Logistic Regression | Balanced,0.3008226594482003
